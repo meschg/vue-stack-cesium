@@ -10,5 +10,14 @@ new Vue({
   router,
   store,
   vuetify,
-  render: h => h(App)
+  render: h => h(App),
+  created() {
+    this.$store.dispatch("aLoad1stDataSet").then(() => {
+      // initial action must return a promise after the data is loaded sucessfully
+      this.$store.dispatch("aLoad2ndDataSet");
+    });
+  },
+  mounted() {
+    //router.push("about")
+  }
 }).$mount('#app')
