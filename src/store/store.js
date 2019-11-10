@@ -1,42 +1,37 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+import { Cesium, Viewer as CsViewer } from 'cesium/Cesium'
+import widget from 'cesium/Widgets/widgets.css'
+
 Vue.use(Vuex)
 
 var csViewer = null;
 
 export default new Vuex.Store({
   state: {
-    dataSet1: null,
-    dataSet2: null,
+    cesiumSettings: {
+      fpsTarget: 60
+    },
+    dataSets: [],
     name1: "Vue-Stack-Cesium Demo"
 
   },
 
   mutations: {
     mCsInit(state) {
-      let viewerData = { //eslint-disable-line
-        scene3DOnly: true,
-        selectionIndicator: false,
-        baseLayerPicker: false,
-        infoBox: false,
-        geocoder: false,
-        timeline: false,
-        animation: false,
-        targetFrameRate: state.settings.gfx.fpsTarget,
-        navigationHelpButton: false,
+      let viewerData = {
+        targetFrameRate: state.cesiumSettings.fpsTarget,
         fullscreenButton: false,
-        shadows: true,
-        homeButton: false,
-        creditContainer: "creditDiv",
-        imageryProvider: new createTileMapServiceImageryProvider({
-          url: new buildModuleUrl('Assets/Textures/NaturalEarthII')
-        }),
+        creditContainer: "creditDiv"
       };
-      csViewer = CsViewer('cesiumContainer', viewerData);
+      csViewer = new CsViewer('cesiumContainer', viewerData);
+    },
+
+    mSetData(state, dataload) {
+      state.dataSets[dataload.dataSetIndex] = dataload.data;
     }
   },
-
 
   actions: {
     aCsInit({ commit }) {
@@ -48,11 +43,11 @@ export default new Vuex.Store({
       })
     },
 
-
     aLoad1stDataSet({ commit }) {
       return new Promise((resolve, reject) => {
         setTimeout(() => {
-          // do stuff and call mutation
+          let payload = { dataSetIndex: 1, data: 42 }
+          commit('mSetData', payload)
           resolve()
         }, 10)
       })
@@ -61,12 +56,12 @@ export default new Vuex.Store({
     aLoad2ndDataSet({ commit }) {
       return new Promise((resolve, reject) => {
         setTimeout(() => {
-          // do more stuff and call mutation
+          let dataload = { dataSetIndex: 2, data: "Towel" }
+          commit('mSetData', dataload)
           resolve()
         }, 10)
       })
     },
-
   },
   modules: {
   }

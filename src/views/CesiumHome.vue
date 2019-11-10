@@ -7,6 +7,7 @@
 <script>
 // @ is an alias to /src
 import HelloCesium from "@/components/HelloCesium.vue";
+import { mapState, mapActions, mapMutations, mapGetters } from "vuex";
 
 export default {
   name: "vueHome",
