@@ -1,4 +1,5 @@
 # vue-stack-cesium
+A minimal sample configuration with vue, vuex, vue-router, vuetify and cesium.
 
 ## Project setup
 ```
@@ -7,17 +8,12 @@ npm install
 
 ### Compiles and hot-reloads for development
 ```
-npm run serve
+vue ui
 ```
 
-### Compiles and minifies for production
+### Install vue/cli globally - in case you missed it ;)
 ```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
+npm install -g @vue/cli
 ```
 
 ### Customize configuration
