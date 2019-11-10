@@ -6,7 +6,7 @@ A minimal sample configuration with vue, vuex, vue-router, vuetify and cesium.
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Use VUE-CLI for development
 ```
 vue ui
 ```

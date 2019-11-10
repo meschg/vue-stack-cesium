@@ -22,6 +22,6 @@ new Vue({
     });
   },
   mounted() {
-    //router.push("about")
+    router.push("cesium")
   }
 }).$mount('#app')
