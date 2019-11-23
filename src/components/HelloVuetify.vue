@@ -64,7 +64,7 @@
 
 <script>
 export default {
-  name: "HelloWorld",
+  name: "HelloTypescript",
 
   data: () => ({
     ecosystem: [

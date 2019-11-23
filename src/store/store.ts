@@ -26,10 +26,12 @@ export default new Vuex.Store({
         creditContainer: "creditDiv"
       };
       csViewer = new CsViewer('cesiumContainer', viewerData);
+      console.log("mCsInit")
     },
 
     mSetData(state, dataload) {
-      state.dataSets[dataload.dataSetIndex] = dataload.data;
+      console.log("mSetData")
+      //state.dataSets[dataload.dataSetIndex] = dataload.data;
     }
   },
 
@@ -37,6 +39,7 @@ export default new Vuex.Store({
     aCsInit({ commit }) {
       return new Promise((resolve, reject) => {
         setTimeout(() => {
+          console.log("aCsInit")
           commit('mCsInit')
           resolve()
         }, 10)
@@ -47,6 +50,7 @@ export default new Vuex.Store({
       return new Promise((resolve, reject) => {
         setTimeout(() => {
           let payload = { dataSetIndex: 1, data: 42 }
+          console.log("aLoad1stDataSet")
           commit('mSetData', payload)
           resolve()
         }, 10)
@@ -57,6 +61,7 @@ export default new Vuex.Store({
       return new Promise((resolve, reject) => {
         setTimeout(() => {
           let dataload = { dataSetIndex: 2, data: "Towel" }
+          console.log("aLoad2ndDataSet")
           commit('mSetData', dataload)
           resolve()
         }, 10)
