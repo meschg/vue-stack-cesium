@@ -1,29 +1,35 @@
 <template>
   <div>
-    <input v-model="msg">
+    <v-container>
+    <v-card class="pa-3">
+
+        <v-text-field
+          v-model="msg"
+          label="Number Message"
+          filled
+          type="number"
+        ></v-text-field>
+  
     <p>prop: {{ propMessage }}</p>
     <p>msg: {{ msg }}</p>
     <p>helloMsg: {{ helloMsg }}</p>
     <p>computed msg: {{ computedMsg }}</p>
-    <Hello ref="helloComponent" />
-    <World />
 
-    <p>
-      <button @click="greet">Greet</button>
-    </p>
+    <h3>  Clicked: {{ count }} times</h3>
+      <v-btn @click="increment">+</v-btn>
+      </br>
+    <v-btn class="ma-2"@click="greet">Greet with annyoning alert</v-btn>
+</v-card>
+</v-container>
+    <HelloTypescript msg="My journey to Typescript"/>
 
-    <p>
-      Clicked: {{ count }} times
-      <button @click="increment">+</button>
-    </p>
+    
   </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import Component from '../../lib/index'
-import Hello from './components/Hello.vue'
-import World from './components/World'
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import HelloTypescript from '@/components/HelloTypescript.vue'
 import { mapState, mapMutations } from 'vuex'
 
 // We declare the props separately
@@ -36,8 +42,7 @@ const AppProps = Vue.extend({
 
 @Component({
   components: {
-    Hello,
-    World
+    HelloTypescript,    
   },
 
   // Vuex's component binding helper can use here
@@ -51,13 +56,14 @@ const AppProps = Vue.extend({
 export default class App extends AppProps {
   // inital data
   msg: number = 123
+  name: string = "Typescript"
 
   // use prop values for initial data
-  helloMsg: string = 'Hello, ' + this.propMessage
+  helloMsg: string = 'Hello, ' + this.name
 
   // annotate refs type
   $refs!: {
-    helloComponent: Hello
+   // helloComponent: Hello
   }
 
   // additional declaration is needed
@@ -67,7 +73,7 @@ export default class App extends AppProps {
 
   // lifecycle hook
   mounted () {
-    this.greet()
+    console.log("TypescriptHome: console log on mounted")    
   }
 
   // computed
@@ -78,12 +84,12 @@ export default class App extends AppProps {
   // method
   greet () {
     alert('greeting: ' + this.msg)
-    this.$refs.helloComponent.sayHello()
+    //this.$refs.helloComponent.sayHello()
   }
 
   // direct dispatch example
   incrementIfOdd () {
-    this.$store.dispatch('incrementIfOdd')
+    //this.$store.dispatch('incrementIfOdd')
   }
 }
 </script>

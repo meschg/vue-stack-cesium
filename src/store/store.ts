@@ -8,13 +8,19 @@ Vue.use(Vuex)
 
 var csViewer = null;
 
+interface CoutnerState {
+  count: number
+}
+
+
 export default new Vuex.Store({
   state: {
     cesiumSettings: {
       fpsTarget: 60
     },
     dataSets: [],
-    name1: "Vue-Stack-Cesium Demo"
+    name1: "Vue-Stack-Cesium Demo",
+    count: 0
 
   },
 
@@ -32,6 +38,10 @@ export default new Vuex.Store({
     mSetData(state, dataload) {
       console.log("mSetData")
       //state.dataSets[dataload.dataSetIndex] = dataload.data;
+    },
+
+    increment(state) {
+      state.count++
     }
   },
 
@@ -67,6 +77,8 @@ export default new Vuex.Store({
         }, 10)
       })
     },
+
+
   },
   modules: {
   }

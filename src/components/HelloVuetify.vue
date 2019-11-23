@@ -64,7 +64,7 @@
 
 <script>
 export default {
-  name: "HelloTypescript",
+  name: "HelloVuetify",
 
   data: () => ({
     ecosystem: [

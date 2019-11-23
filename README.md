@@ -1,5 +1,5 @@
 # vue-stack-cesium
-A minimal sample configuration with vue, vuex, vue-router, vuetify and cesium.
+A minimal sample configuration with vue, vuex, vue-router, vuetify, Typescript and cesium.
 
 ## Project setup
 ```

@@ -32,6 +32,7 @@
 
       <v-btn class="mx-2" route to="/">Route to Vue</v-btn>
       <v-btn class="mx-2" route to="/vuetify">Route to Vuetify</v-btn>
+      <v-btn class="mx-2" route to="/typescript">Route to Typescript</v-btn>
       <v-btn class="mx-2" route to="/cesium">Route to Cesium</v-btn>
 
       <v-spacer></v-spacer>

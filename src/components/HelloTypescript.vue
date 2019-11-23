@@ -1,11 +1,6 @@
 <template>
-  <div class="hello">
+  <div class="HelloTypescript">
     <h1>{{ msg }}</h1>
-
-      <v-btn class="mx-2" route to="/">Route to Vue</v-btn>
-      <v-btn class="mx-2" route to="/vuetify">Route to Vuetify</v-btn>
-      <v-btn class="mx-2" route to="/cesium">Route to Cesium</v-btn>
-
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the

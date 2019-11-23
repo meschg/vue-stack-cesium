@@ -11,17 +11,22 @@ const routes = [
     component: VueHome
   },
   {
+    path: '/typescript',
+    name: 'typescriptHome',
+    component: () => import(/* webpackChunkName: "typescriptHome" */ '../views/TypescriptHome.vue')
+  },
+  {
     path: '/vuetify',
     name: 'vuetifyHome',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/VuetifyHome.vue')
+    component: () => import(/* webpackChunkName: "vuetifyHome" */ '../views/VuetifyHome.vue')
   },
   {
     path: '/cesium',
     name: 'cesiumHome',
-    component: () => import(/* webpackChunkName: "about" */ '../views/CesiumHome.vue')
+    component: () => import(/* webpackChunkName: "cesiumHome" */ '../views/CesiumHome.vue')
   },
 ]
 
