@@ -39,8 +39,23 @@ module.exports = {
     ],
     module: {
       unknownContextCritical: /^.\/.*$/,
-      unknownContextCritical: false
-
+      unknownContextCritical: false,
+      rules: [{
+        // Remove pragmas 
+        // https://github.com/AnalyticalGraphicsInc/cesium-webpack-example/blob/master/webpack.release.config.js
+        test: /\.js$/,
+        enforce: 'pre',
+        include: path.resolve(__dirname, 'node_modules/cesium/Source'),
+        sideEffects: false,
+        use: [{
+          loader: 'strip-pragma-loader',
+          options: {
+            pragmas: {
+              debug: false
+            }
+          }
+        }]
+      }]
     }
   },
   lintOnSave: false,
