@@ -1,10 +1,11 @@
 <template>
   <div>
-    <h1>Cesium is here</h1>
+    <h1>Vue makes Cesium even more awesome!</h1>
+
     <div id="CesiumPanelDiv">
       <div id="cesiumContainer"></div>
     </div>
-    <div id="creditDiv"></div>
+
     <v-btn
       href="https://github.com/AnalyticalGraphicsInc/cesium"
       target="_blank"

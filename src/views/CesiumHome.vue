@@ -31,6 +31,6 @@ export default {
       //this.$store.dispatch("aLoad1stDataSet");
     });
   },
-  mounted: function() {}
+  mounted: function () { }
 };
 </script>

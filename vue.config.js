@@ -4,8 +4,11 @@ const webpack = require('webpack')
 const path = require('path')
 
 const debug = process.env.NODE_ENV !== 'production'
-let cesiumSource = './node_modules/cesium/Source'
-let cesiumWorkers = '../Build/Cesium/Workers'
+let cesiumSource = './node_modules/cesium/Source/'
+let cesiumBuild = 'node_modules/cesium/Build/Cesium/'
+
+//let cesiumWebpackPathUsage = cesiumBuild;
+//cesiumWebpackPathUsage = cesiumSource + "/"; // comment to use build version
 
 module.exports = {
   //Cesium webpack settings
@@ -26,10 +29,10 @@ module.exports = {
       }
     },
     plugins: [
-      new CopyWebpackPlugin([{ from: 'node_modules/cesium/Build/Cesium/Workers', to: 'Workers' }]),
-      new CopyWebpackPlugin([{ from: 'node_modules/cesium/Build/Cesium/ThirdParty', to: 'ThirdParty' }]),
-      new CopyWebpackPlugin([{ from: 'node_modules/cesium/Build/Cesium/Assets', to: 'Assets' }]),
-      new CopyWebpackPlugin([{ from: 'node_modules/cesium/Build/Cesium/Widgets', to: 'Widgets' }]),
+      new CopyWebpackPlugin([{ from: cesiumSource + 'Workers', to: 'Workers' }]),
+      new CopyWebpackPlugin([{ from: cesiumSource + 'ThirdParty', to: 'ThirdParty' }]),
+      new CopyWebpackPlugin([{ from: cesiumBuild + 'Assets', to: 'Assets' }]),
+      new CopyWebpackPlugin([{ from: cesiumBuild + 'Widgets', to: 'Widgets' }]),
       new webpack.DefinePlugin({
         CESIUM_BASE_URL: JSON.stringify('./')
       })

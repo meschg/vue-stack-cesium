@@ -37,7 +37,7 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn href="https://github.com/meschg/vue-stack-cesium" target="_blank" text>
+      <v-btn href="https://github.com/meschg/vue-stack-cesium" class="success" target="_blank">
         <span class="mr-2">This TEMPLATE on Github</span>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>

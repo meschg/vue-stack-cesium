@@ -1,14 +1,12 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
-import { Cesium, Viewer as CsViewer } from 'cesium/Cesium'
-import widget from 'cesium/Widgets/widgets.css'
+import Cesium from '../plugins/cesium'
 
 Vue.use(Vuex)
 
 var csViewer = null;
 
-interface CoutnerState {
+interface CounterState {
   count: number
 }
 
@@ -29,9 +27,9 @@ export default new Vuex.Store({
       let viewerData = {
         targetFrameRate: state.cesiumSettings.fpsTarget,
         fullscreenButton: false,
-        creditContainer: "creditDiv"
+        // additional viewer settings
       };
-      csViewer = new CsViewer('cesiumContainer', viewerData);
+      csViewer = new Cesium.Viewer('cesiumContainer', viewerData);
       console.log("mCsInit")
     },
 

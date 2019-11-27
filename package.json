@@ -17,6 +17,7 @@
     "vuex": "^3.1.2"
   },
   "devDependencies": {
+    "@types/cesium": "^1.59.3",
     "@vue/cli-plugin-babel": "^4.0.0",
     "@vue/cli-plugin-eslint": "^4.0.0",
     "@vue/cli-plugin-router": "^4.0.0",

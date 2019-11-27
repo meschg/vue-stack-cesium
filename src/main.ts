@@ -3,12 +3,10 @@ import App from './App.vue'
 import router from './router/router'
 import store from './store/store'
 import vuetify from './plugins/vuetify';
-
-import { Cesium, Ion } from 'cesium/Cesium'
-import widget from 'cesium/Widgets/widgets.css'
+import Cesium from './plugins/cesium'
 
 Vue.config.productionTip = false
-//Ion.defaultAccessToken = 'YOUR ION TOKEN HERE';
+//Cesium.Ion.defaultAccessToken = 'YOUR ION TOKEN HERE';
 
 new Vue({
   router,
