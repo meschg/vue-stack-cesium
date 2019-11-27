@@ -1,8 +1,4 @@
-import { Ion, Viewer } from 'cesium/Cesium'
-import widget from 'cesium/Widgets/widgets.css'
+const widget = require('../../node_modules/cesium/Build/Cesium/Widgets/widgets.css')
+const Cesium = require('../../node_modules/cesium/Source/Cesium')
 
-export default ({
-    Viewer,
-    Ion,
-    widget
-})
+export default Cesium
