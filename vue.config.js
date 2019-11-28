@@ -41,8 +41,7 @@ module.exports = {
       unknownContextCritical: /^.\/.*$/,
       unknownContextCritical: false,
       rules: [{
-        // Remove pragmas 
-        // https://github.com/AnalyticalGraphicsInc/cesium-webpack-example/blob/master/webpack.release.config.js
+        // Remove pragmas within cesium as recommended - https://github.com/AnalyticalGraphicsInc/cesium-webpack-example/blob/master/webpack.release.config.js
         test: /\.js$/,
         enforce: 'pre',
         include: path.resolve(__dirname, 'node_modules/cesium/Source'),
@@ -58,8 +57,8 @@ module.exports = {
       }]
     }
   },
-  lintOnSave: false,
   transpileDependencies: [
     "vuetify"
-  ]
+  ],
+  lintOnSave: false,
 }
