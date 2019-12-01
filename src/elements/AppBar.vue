@@ -32,12 +32,11 @@
 
       <v-btn class="mx-2" route to="/">Vue</v-btn>
       <v-btn class="mx-2" route to="/vuetify">Vuetify</v-btn>
-
       <v-btn class="mx-2" route to="/typescript">Typescript</v-btn>
-
-      <v-btn class="mx-2" @click="navigateWithProps">ClassStyle</v-btn>
-      <v-text-field v-model="routerProp" label="Router Prop" filled></v-text-field>
       <v-btn class="mx-2" route to="/cesium">Cesium</v-btn>
+
+      <v-btn class="mx-2" route to="/classStyle/static/props">ClassStyle</v-btn>
+      <v-btn class="mx-2" @click="routerActions">Dynamic-Props</v-btn>
 
       <v-spacer></v-spacer>
 
@@ -58,7 +57,6 @@ import router from "@/router/router"
 // We declare the props separately to make props types inferable.
 const AppProps = Vue.extend({
   props: {
-    propMessage: String
   }
 })
 
@@ -79,14 +77,35 @@ const AppProps = Vue.extend({
 export default class AppBar extends AppProps {
   // inital data
   msg: number = 123
-  name: string = "Typescript"
+  dynamicProp: string = "Dynamic"
   routerProp: string = "prop"
 
-  navigateWithProps() {
+  routerActions() {
     //https://router.vuejs.org/guide/essentials/navigation.html
+    //https://router.vuejs.org/guide/essentials/passing-props.html
     let rPar = this.msg;
-    //router.push({ name: 'user', params: { this.msg } }) // -> /user/123
-    router.push("classStyle") // -> /user/123
+    // literal string path
+    //router.push('home')
+
+    // object
+    //router.push({ path: 'home' })
+
+    const propConst = 'const456'
+    let propLet = "let123"
+    // routes do string only
+    //let compData: string = "Stringified" + this.msg
+    let compData: string = this.dynamicProp;
+
+    // named route
+    //router.push({ name: 'ClassStyleHome', params: { routerProp: '', routerProp2: "456" } })
+    //router.push({ name: 'ClassStyleHome', params: { routerProp: '123', routerProp2: propConst } })
+    //router.push({ name: 'ClassStyleHome', params: { routerProp: propLet, routerProp2: propConst } })    
+    router.push({ name: 'ClassStyleHome', params: { routerProp: compData, routerProp2: propConst } })
+
+    // with query, resulting in /register?plan=private
+    //router.push({ path: 'register', query: { plan: 'private' } })
+
+    //router.push("classStyle") // -> /user/123
     console.log("Called for router" + this.msg)
   }
 

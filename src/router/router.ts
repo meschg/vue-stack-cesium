@@ -7,7 +7,7 @@ Vue.use(VueRouter)
 
 //https://router.vuejs.org/guide/essentials/passing-props.html
 const User = {
-  props: ['id'],
+  props: ['routerProp', 'routerProp2'],
   template: '<div>User {{ id }}</div>'
 }
 
@@ -37,7 +37,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "CesiumHome" */ '../views/CesiumHome.vue')
   },
   {
-    path: '/classStyle',
+    path: '/classStyle/:routerProp/:routerProp2',
     name: 'ClassStyleHome',
     component: ClassStyleHome,
     props: true

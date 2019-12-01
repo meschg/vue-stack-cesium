@@ -2,9 +2,10 @@
   <div>
     <v-container>
       <v-card class="pa-3">
+        <div>routerProp: {{ routerProp }}</div>
+        <div>routerProp2: {{ routerProp2 }}</div>
         <v-text-field v-model="msg" label="Number Message" filled type="number"></v-text-field>
 
-        <p>prop: {{ propMessage }}</p>
         <p>msg: {{ msg }}</p>
         <p>helloMsg: {{ helloMsg }}</p>
         <p>computed msg: {{ computedMsg }}</p>
@@ -30,7 +31,8 @@ import HelloClassStyle from '@/components/HelloClassStyle.vue'
 // We declare the props separately to make props types inferable.
 const AppProps = Vue.extend({
   props: {
-    propMessage: String
+    routerProp: String,
+    routerProp2: String,
   }
 })
 
