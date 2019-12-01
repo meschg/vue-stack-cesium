@@ -15,6 +15,7 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { mapState, mapMutations } from 'vuex'
+import router from "@/router/router"
 
 // We declare the props separately to make props types inferable.
 const AppProps = Vue.extend({
@@ -41,20 +42,29 @@ export default class HelloClassStyle extends AppProps {
   }
 
   created() {
-    console.log("Class style created()")
   }
 
   mounted() {
-    console.log("Class style mounted()")
+
   }
 
   destroyed() {
-    console.log("Class style destroyed()")
+
   }
 
   // computed
-  get computedMsg() {
-    return 'Computed ' + this.localString
+  get computedMsg(): string {
+    return 'Computed '
+  }
+
+  storeActions(): void {
+    //this.$store.dispatch('dispatchMuatation')
+    //this.$store.commit('commitMutation')
+  }
+
+  routerActions(): void {
+    router.push("classStyle") // -> /user/123
+    console.log("Called for router")
   }
 }
 

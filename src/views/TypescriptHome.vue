@@ -1,3 +1,5 @@
+
+//https://github.com/vuejs/vue-class-component/blob/master/example/src/App.vue
 <template>
   <div>
     <v-container>
@@ -23,6 +25,7 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import HelloTypescript from '@/components/HelloTypescript.vue'
 import { mapState, mapMutations } from 'vuex'
+
 
 // We declare the props separately
 // to make props types inferable.

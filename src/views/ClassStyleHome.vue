@@ -22,6 +22,7 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { mapState, mapMutations } from 'vuex'
+import router from "@/router/router"
 
 // import other components
 import HelloClassStyle from '@/components/HelloClassStyle.vue'
@@ -33,7 +34,9 @@ const AppProps = Vue.extend({
   }
 })
 
+// The @Component decorator indicates the class is a Vue component
 @Component({
+  // All component options are allowed in here
   components: {
     HelloClassStyle,
   },
@@ -47,7 +50,7 @@ const AppProps = Vue.extend({
 })
 
 export default class ClassStyleHome extends AppProps {
-  // inital data
+  // Initial data can be declared as instance properties
   msg: number = 123565343
   name: string = "Typescript"
 
@@ -59,30 +62,45 @@ export default class ClassStyleHome extends AppProps {
     // helloComponent: Hello
   }
 
-  // additional declaration is needed
+  // additional declaration is needed to get the types correctly
   // when you declare some properties in `Component` decorator
   count!: number
   increment!: () => void
 
   // lifecycle hook
-  mounted() {
-    //console.log("TypescriptHome: console log on mounted")
+  created() {
+    console.log("Class style created()")
   }
 
-  // computed
-  get computedMsg() {
+  mounted() {
+    console.log("Class style mounted()")
+  }
+
+  destroyed() {
+    console.log("Class style destroyed()")
+  }
+
+  // computed getters
+  get computedMsg(): String {
     return 'computed ' + this.msg
   }
 
-  // method
-  greet() {
+  // Component methods can be declared as instance methods
+  greet(): void {
     alert('greeting: ' + this.msg)
     //this.$refs.helloComponent.sayHello()
   }
 
-  // direct dispatch example
-  incrementIfOdd() {
-    //this.$store.dispatch('incrementIfOdd')
+  // store commit dispatch example
+  storeActions(): void {
+    //this.$store.dispatch('dispatchMuatation')
+    //this.$store.commit('commitMutation')
+    console.log("Store-action called.")
+  }
+
+  routerActions(): void {
+    //router.push("classStyle") // -> /user/123
+    console.log("Router called.")
   }
 }
 </script>
