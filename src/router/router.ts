@@ -1,33 +1,47 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueHome from '../views/VueHome.vue'
+import ClassStyleHome from '../views/ClassStyleHome.vue'
 
 Vue.use(VueRouter)
+
+//https://router.vuejs.org/guide/essentials/passing-props.html
+const User = {
+  props: ['id'],
+  template: '<div>User {{ id }}</div>'
+}
+
 
 const routes = [
   {
     path: '/',
-    name: 'vueHome',
+    name: 'VueHome',
     component: VueHome
   },
   {
     path: '/typescript',
-    name: 'typescriptHome',
+    name: 'TypescriptHome',
     component: () => import(/* webpackChunkName: "typescriptHome" */ '../views/TypescriptHome.vue')
   },
   {
     path: '/vuetify',
-    name: 'vuetifyHome',
+    name: 'VuetifyHome',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "vuetifyHome" */ '../views/VuetifyHome.vue')
+    component: () => import(/* webpackChunkName: "VuetifyHome" */ '../views/VuetifyHome.vue')
   },
   {
     path: '/cesium',
-    name: 'cesiumHome',
-    component: () => import(/* webpackChunkName: "cesiumHome" */ '../views/CesiumHome.vue')
+    name: 'CesiumHome',
+    component: () => import(/* webpackChunkName: "CesiumHome" */ '../views/CesiumHome.vue')
   },
+  {
+    path: '/classStyle',
+    name: 'ClassStyleHome',
+    component: ClassStyleHome,
+    props: true
+  }
 ]
 
 const router = new VueRouter({

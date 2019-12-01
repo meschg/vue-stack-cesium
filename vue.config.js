@@ -13,7 +13,11 @@ let cesiumBuild = 'node_modules/cesium/Build/Cesium/'
 module.exports = {
   //Cesium webpack settings
   publicPath: '',
-  devServer: {},
+  devServer: {
+    historyApiFallback: true,
+    noInfo: true,
+    overlay: true
+  },
   configureWebpack: {
     output: {
       sourcePrefix: ' '

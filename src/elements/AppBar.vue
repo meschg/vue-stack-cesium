@@ -30,10 +30,14 @@
         />
       </div>
 
-      <v-btn class="mx-2" route to="/">Route to Vue</v-btn>
-      <v-btn class="mx-2" route to="/vuetify">Route to Vuetify</v-btn>
-      <v-btn class="mx-2" route to="/typescript">Route to Typescript</v-btn>
-      <v-btn class="mx-2" route to="/cesium">Route to Cesium</v-btn>
+      <v-btn class="mx-2" route to="/">Vue</v-btn>
+      <v-btn class="mx-2" route to="/vuetify">Vuetify</v-btn>
+
+      <v-btn class="mx-2" route to="/typescript">Typescript</v-btn>
+
+      <v-btn class="mx-2" @click="navigateWithProps">ClassStyle</v-btn>
+      <v-text-field v-model="routerProp" label="Router Prop" filled></v-text-field>
+      <v-btn class="mx-2" route to="/cesium">Cesium</v-btn>
 
       <v-spacer></v-spacer>
 
@@ -44,3 +48,47 @@
     </v-app-bar>
   </div>
 </template>
+
+<script lang="ts">
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import { mapState, mapMutations } from 'vuex'
+import router from "@/router/router"
+
+
+// We declare the props separately to make props types inferable.
+const AppProps = Vue.extend({
+  props: {
+    propMessage: String
+  }
+})
+
+@Component({
+  components: {
+
+  },
+  // Vuex's component binding helper can use here
+  computed: mapState([
+    'count'
+  ]),
+  methods: mapMutations([
+    'increment'
+  ]),
+  template: '<button @click="onClick">Click!</button>'
+})
+
+export default class AppBar extends AppProps {
+  // inital data
+  msg: number = 123
+  name: string = "Typescript"
+  routerProp: string = "prop"
+
+  navigateWithProps() {
+    //https://router.vuejs.org/guide/essentials/navigation.html
+    let rPar = this.msg;
+    //router.push({ name: 'user', params: { this.msg } }) // -> /user/123
+    router.push("classStyle") // -> /user/123
+    console.log("Called for router" + this.msg)
+  }
+
+}
+</script>

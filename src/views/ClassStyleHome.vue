@@ -15,17 +15,18 @@
         <v-btn class="ma-2" @click="greet">Greet with annyoning alert</v-btn>
       </v-card>
     </v-container>
-    <HelloTypescript msg="My journey to Typescript" />
+    <HelloClassStyle msg1="Hello Class Style" msg2="2nd message" />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import HelloTypescript from '@/components/HelloTypescript.vue'
 import { mapState, mapMutations } from 'vuex'
 
-// We declare the props separately
-// to make props types inferable.
+// import other components
+import HelloClassStyle from '@/components/HelloClassStyle.vue'
+
+// We declare the props separately to make props types inferable.
 const AppProps = Vue.extend({
   props: {
     propMessage: String
@@ -34,9 +35,8 @@ const AppProps = Vue.extend({
 
 @Component({
   components: {
-    HelloTypescript,
+    HelloClassStyle,
   },
-
   // Vuex's component binding helper can use here
   computed: mapState([
     'count'
@@ -46,10 +46,10 @@ const AppProps = Vue.extend({
   ])
 })
 
-export default class TypescriptHome extends AppProps {
+export default class ClassStyleHome extends AppProps {
   // inital data
-  msg: number = 123
-  name: string = "TypescriptHome"
+  msg: number = 123565343
+  name: string = "Typescript"
 
   // use prop values for initial data
   helloMsg: string = 'Hello, ' + this.name
@@ -66,7 +66,7 @@ export default class TypescriptHome extends AppProps {
 
   // lifecycle hook
   mounted() {
-    console.log("TypescriptHome: console log on mounted")
+    //console.log("TypescriptHome: console log on mounted")
   }
 
   // computed
