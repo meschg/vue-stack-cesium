@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import Cesium from '../plugins/cesium'
+import { EllipsoidTerrainProvider } from 'cesium';
 
 Vue.use(Vuex)
 
@@ -24,10 +25,22 @@ export default new Vuex.Store({
 
   mutations: {
     mCsInit(state) {
+      let imageryViewModels: any = [];
+      imageryViewModels.push(new Cesium.ProviderViewModel({
+        name: 'Natural Earth\u00a0II',
+        iconUrl: Cesium.buildModuleUrl('Widgets/Images/ImageryProviders/naturalEarthII.png'),
+        tooltip: 'Natural Earth II, darkened for contrast.\nhttp://www.naturalearthdata.com/',
+        creationFunction: function () {
+          return new Cesium.TileMapServiceImageryProvider({
+            url: Cesium.buildModuleUrl('Assets/Textures/NaturalEarthII')
+          });
+        }
+      }));
+
       let viewerData = {
         targetFrameRate: state.cesiumSettings.fpsTarget,
         fullscreenButton: false,
-        // additional viewer settings
+        imageryProviderViewModels: imageryViewModels // remove if you added you Cesium Ion Token to get all layer access
       };
       csViewer = new Cesium.Viewer('cesiumContainer', viewerData);
       console.log("mCsInit")

@@ -5,7 +5,7 @@ import store from './store/store'
 import vuetify from './plugins/vuetify';
 
 //import Cesium from './plugins/cesium'
-//Cesium.Ion.defaultAccessToken = 'YOUR ION TOKEN HERE';
+//Cesium.Ion.defaultAccessToken = 'YOUR ION TOKEN HERE OR YOU CAN NOT USE THE MAPS ANYMORE';
 
 Vue.config.productionTip = false
 
