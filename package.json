@@ -8,7 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "cesium": "^1.66.0",
+    "cesium": "^1.67.0",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
     "vue-property-decorator": "^8.4.0",
@@ -17,7 +17,7 @@
     "vuex": "^3.1.2"
   },
   "devDependencies": {
-    "@types/cesium": "^1.66.3",
+    "@types/cesium": "^1.66.5",
     "@vue/cli-plugin-babel": "^4.2.3",
     "@vue/cli-plugin-eslint": "^4.2.3",
     "@vue/cli-plugin-router": "^4.2.3",
