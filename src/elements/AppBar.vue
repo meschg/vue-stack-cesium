@@ -97,9 +97,11 @@ export default class AppBar extends AppProps {
     let compData: string = this.dynamicProp;
 
     // named route
+    // Warning: double navigation to the same dynamic props might cause errors
+    // TODO: check if route is already active before pushing it
     //router.push({ name: 'ClassStyleHome', params: { routerProp: '', routerProp2: "456" } })
     //router.push({ name: 'ClassStyleHome', params: { routerProp: '123', routerProp2: propConst } })
-    //router.push({ name: 'ClassStyleHome', params: { routerProp: propLet, routerProp2: propConst } })    
+    //router.push({ name: 'ClassStyleHome', params: { routerProp: propLet, routerProp2: propConst } })        
     router.push({ name: 'ClassStyleHome', params: { routerProp: compData, routerProp2: propConst } })
 
     // with query, resulting in /register?plan=private
