@@ -43,6 +43,7 @@ export default new Vuex.Store({
         imageryProviderViewModels: imageryViewModels // remove if you added you Cesium Ion Token to get all layer access
       };
       csViewer = new Cesium.Viewer('cesiumContainer', viewerData);
+      csViewer.scene.debugShowFramesPerSecond = true
       console.log("mCsInit")
     },
 

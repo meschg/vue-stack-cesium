@@ -30,10 +30,10 @@
         />
       </div>
 
-      <v-btn class="mx-2" route to="/">Vue</v-btn>
-      <v-btn class="mx-2" route to="/vuetify">Vuetify</v-btn>
-      <v-btn class="mx-2" route to="/typescript">Typescript</v-btn>
-      <v-btn class="mx-2" route to="/cesium">Cesium</v-btn>
+      <v-btn class="mx-2" route to="/">Vue {{dep.vue}}</v-btn>
+      <v-btn class="mx-2" route to="/vuetify">Vuetify {{dep.vuetify}}</v-btn>
+      <v-btn class="mx-2" route to="/typescript">Typescript {{dep.typescript}}</v-btn>
+      <v-btn class="mx-2" route to="/cesium">Cesium {{dep.cesium}}</v-btn>
 
       <v-btn class="mx-2" route to="/classStyle/static/props">ClassStyle</v-btn>
       <v-btn class="mx-2" @click="routerActions">Dynamic-Props</v-btn>
@@ -79,6 +79,18 @@ export default class AppBar extends AppProps {
   msg: number = 123
   dynamicProp: string = "Dynamic"
   routerProp: string = "prop"
+
+  dep = {
+    "cesium": "1.73.0",
+    "vue": "2.6.12",
+    "vue-class-component": "7.2.5",
+    "vue-property-decorator": "9.0.0",
+    "vue-router": "3.4.3",
+    "vue-shortkey": "3.1.7",
+    "vuetify": "2.3.10",
+    "vuex": "3.5.1",
+    "typescript": "4.0.2",
+  }
 
   routerActions() {
     //https://router.vuejs.org/guide/essentials/navigation.html
