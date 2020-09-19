@@ -89,7 +89,7 @@ export default class AppBar extends AppProps {
     "vue-shortkey": "3.1.7",
     "vuetify": "2.3.10",
     "vuex": "3.5.1",
-    "typescript": "4.0.2",
+    "typescript": "4.0.3",
   }
 
   routerActions() {
