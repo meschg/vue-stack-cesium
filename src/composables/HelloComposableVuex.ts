@@ -12,7 +12,9 @@ export default function fileCompositionVuex() {
     })
 
     function incrementVuex() {
+        //@ts-ignore
         this.$store.commit("increment");
+        //@ts-ignore
         console.warn("Fancy vuex store action!" + this.count)
     }
 
