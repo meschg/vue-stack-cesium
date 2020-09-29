@@ -3,9 +3,8 @@
     <v-container>
       <v-card class="pa-4">
         <img alt="Vue logo" src="../assets/logo.png" />
-        <v-layout text-center wrap>
-          <HelloVue msg="Welcome to Your Vue.js App" />
-        </v-layout>
+        <HelloVue msg="Welcome to Your Vue.js App" />
+        <v-layout text-center wrap> </v-layout>
       </v-card>
     </v-container>
   </div>

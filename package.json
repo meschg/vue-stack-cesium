@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@vue/composition-api": "^1.0.0-beta.14",
     "cesium": "^1.73.0",
     "vue": "^2.6.12",
     "vue-class-component": "^7.2.6",

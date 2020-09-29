@@ -30,17 +30,24 @@
         />
       </div>
 
-      <v-btn class="mx-2" route to="/">Vue {{dep.vue}}</v-btn>
-      <v-btn class="mx-2" route to="/vuetify">Vuetify {{dep.vuetify}}</v-btn>
-      <v-btn class="mx-2" route to="/typescript">Typescript {{dep.typescript}}</v-btn>
-      <v-btn class="mx-2" route to="/cesium">Cesium {{dep.cesium}}</v-btn>
+      <v-btn class="mx-2" route to="/">Vue {{ dep.vue }}</v-btn>
+      <v-btn class="mx-2" route to="/vuetify">Vuetify {{ dep.vuetify }}</v-btn>
+      <v-btn class="mx-2" route to="/typescript"
+        >Typescript {{ dep.typescript }}</v-btn
+      >
+      <v-btn class="mx-2" route to="/cesium">Cesium {{ dep.cesium }}</v-btn>
 
       <v-btn class="mx-2" route to="/classStyle/static/props">ClassStyle</v-btn>
       <v-btn class="mx-2" @click="routerActions">Dynamic-Props</v-btn>
+      <v-btn class="mx-2" route to="/compositionAPI">Composition API</v-btn>
 
       <v-spacer></v-spacer>
 
-      <v-btn href="https://github.com/meschg/vue-stack-cesium" class="success" target="_blank">
+      <v-btn
+        href="https://github.com/meschg/vue-stack-cesium"
+        class="success"
+        target="_blank"
+      >
         <span class="mr-2">This TEMPLATE on Github</span>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>

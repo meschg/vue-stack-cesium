@@ -4,6 +4,9 @@ import router from './router/router'
 import store from './store/store'
 import vuetify from './plugins/vuetify';
 
+import VueCompositionAPI from '@vue/composition-api'
+Vue.use(VueCompositionAPI)
+
 const vueshortkey = require('vue-shortkey')
 Vue.use(vueshortkey, { prevent: ['input', 'textarea'] })
 

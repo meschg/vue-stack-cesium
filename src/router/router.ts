@@ -21,7 +21,7 @@ const routes = [
   {
     path: '/typescript',
     name: 'TypescriptHome',
-    component: () => import(/* webpackChunkName: "typescriptHome" */ '../views/TypescriptHome.vue')
+    component: () => import(/* webpackChunkName: "TypescriptHome" */ '../views/TypescriptHome.vue')
   },
   {
     path: '/vuetify',
@@ -41,6 +41,11 @@ const routes = [
     name: 'ClassStyleHome',
     component: ClassStyleHome,
     props: true
+  },
+  {
+    path: '/compositionAPI',
+    name: 'CompositionAPIHome',
+    component: () => import(/* webpackChunkName: "CompositionAPIHome" */ '../views/CompositionAPIHome.vue')
   }
 ]
 

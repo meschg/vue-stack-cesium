@@ -1,5 +1,5 @@
 # vue-stack-cesium
-A minimal sample configuration project which shows how to combine and use certain packages. This project is maintained
+A minimal sample configuration project which shows how to combine and use certain packages. This project is being maintained to the newest supported version of the used packages.
 
 ## vue features
 * vue 2.6.x
@@ -8,6 +8,7 @@ A minimal sample configuration project which shows how to combine and use certai
 * vuetify 2.3.x
 * vue-shortkey 3.1.x
 * vue class component 7.2.x
+* vue composition API plugin 1.0.0-beta-x
 
 ## other useful features
 * Typescript 4.0.x
@@ -15,7 +16,6 @@ A minimal sample configuration project which shows how to combine and use certai
 * mdi-fonts & icons by CDN (see index.html)
 
 ## coming next
-* vue 2 composition API plugin (coming soon)
 * vue 3  (vue 3 requires vuetify 3)
 * vuetify 3
 
