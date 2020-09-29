@@ -5,6 +5,7 @@
         <h3>{{msg1}}</h3>
         <h4>{{msg2}}</h4>
         <p>Button counter: {{localCounter}}</p>
+        <input v-model="localCounter" type="text" />
         <v-btn @click="increment">+1</v-btn>
         <p>Getter: {{computedMsg}}</p>
       </v-card>

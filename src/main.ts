@@ -4,11 +4,13 @@ import router from './router/router'
 import store from './store/store'
 import vuetify from './plugins/vuetify';
 
+const vueshortkey = require('vue-shortkey')
+Vue.use(vueshortkey, { prevent: ['input', 'textarea'] })
+
 //import Cesium from './plugins/cesium'
 //Cesium.Ion.defaultAccessToken = 'YOUR ION TOKEN HERE OR YOU CAN NOT USE THE MAPS ANYMORE';
 
 Vue.config.productionTip = false
-
 
 new Vue({
   router,

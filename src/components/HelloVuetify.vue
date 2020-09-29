@@ -1,8 +1,34 @@
 <template>
   <v-container>
     <v-layout text-center wrap>
+      <v-flex xs4 pa-4>
+        <v-btn
+          block
+          @click="buttonClickFunction"
+          @shortkey="buttonShortkeyFunction"
+          v-shortkey.once="['space']"
+        >
+          <v-icon>mdi-email</v-icon> eMail with shortkey (Space)
+        </v-btn>
+      </v-flex>
+
+      <v-flex xs4 pa-4>
+        <v-alert dense outlined prominent text type="success">
+          {{ displayText }} Count: {{ buttonCounter }}
+        </v-alert>
+      </v-flex>
+
+      <v-flex xs4 pa-4>
+        <v-text-field v-model="dataBinds.textField"></v-text-field>
+      </v-flex>
+
       <v-flex xs12>
-        <v-img :src="require('../assets/logo.svg')" class="my-3" contain height="200"></v-img>
+        <v-img
+          :src="require('../assets/logo.svg')"
+          class="my-3"
+          contain
+          height="200"
+        ></v-img>
       </v-flex>
 
       <v-flex mb-4>
@@ -10,10 +36,9 @@
         <p class="subheading font-weight-regular">
           For help and collaboration with other Vuetify developers,
           <br />please join our online
-          <a
-            href="https://community.vuetifyjs.com"
-            target="_blank"
-          >Discord Community</a>
+          <a href="https://community.vuetifyjs.com" target="_blank"
+            >Discord Community</a
+          >
         </p>
       </v-flex>
 
@@ -27,7 +52,8 @@
             :href="next.href"
             class="subheading mx-3"
             target="_blank"
-          >{{ next.text }}</a>
+            >{{ next.text }}</a
+          >
         </v-layout>
       </v-flex>
 
@@ -41,7 +67,8 @@
             :href="link.href"
             class="subheading mx-3"
             target="_blank"
-          >{{ link.text }}</a>
+            >{{ link.text }}</a
+          >
         </v-layout>
       </v-flex>
 
@@ -55,7 +82,8 @@
             :href="eco.href"
             class="subheading mx-3"
             target="_blank"
-          >{{ eco.text }}</a>
+            >{{ eco.text }}</a
+          >
         </v-layout>
       </v-flex>
     </v-layout>
@@ -67,6 +95,11 @@ export default {
   name: "HelloVuetify",
 
   data: () => ({
+    displayText: "InitialText",
+    buttonCounter: 0,
+    dataBinds: {
+      textField: "1234 abcd"
+    },
     ecosystem: [
       {
         text: "vuetify-loader",
@@ -117,6 +150,18 @@ export default {
         href: "https://vuetifyjs.com/getting-started/frequently-asked-questions"
       }
     ]
-  })
-};
+  }),
+  methods: {
+    buttonClickFunction: function (event) {
+      this.displayText = "Button was clicked"
+      this.buttonCounter++
+      console.log("Button click function called")
+    },
+    buttonShortkeyFunction: function (event) {
+      this.displayText = "Button triggerd by shortkey"
+      this.buttonCounter++
+      console.log("Button shortkey function called")
+    }
+  }
+}
 </script>
