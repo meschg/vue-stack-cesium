@@ -1,13 +1,34 @@
 <template>
   <v-container>
-    <p>Count is: {{ state.count }}, double is: {{ state.double }}</p>
-    <v-btn @click="increment" class="primary ma-2"> @click() </v-btn>
-    <v-layout text-center warp> </v-layout>
+    <v-card class="ma-4 pa-4">
+      <h2>File One</h2>
+      <h3>{{ refValue }}</h3>
+      <p>
+        clickCount is: {{ recObj.clickCount }}, double is: {{ recObj.double }}
+      </p>
+      <p>{{ recObj.itemList }}</p>
+      <v-btn @click="incrementComp" class="primary ma-2"> @click() </v-btn>
+    </v-card>
+    <v-card class="ma-4 pa-4">
+      <h2>File Two</h2>
+      <p>{{ secondRObj.clickCount }} clickified {{ secondRObj.clickified }}</p>
+      <v-btn @click="clickIncrement">clickIncrement()</v-btn>
+    </v-card>
+    <v-card class="ma-4 pa-4">
+      <h2>State in File</h2>
+      <h3>State Count: {{ count }}</h3>
+      <v-btn @click="incrementVuex" color="purple" dark>+ vuex</v-btn>
+    </v-card>
   </v-container>
 </template>
 
 <script>
-import { ref, reactive, computed } from '@vue/composition-api'
+import { ref, reactive, computed, toRefs } from '@vue/composition-api'
+import fileCompositionOne from "@/composables/HelloComposableOne"
+import fileCompositionTwo from "@/composables/HelloComposableTwo"
+import fileCompositionVuex from "@/composables/HelloComposableVuex"
+
+import { mapState, mapMutations } from 'vuex'
 
 export default {
   name: "HelloVue",
@@ -15,21 +36,17 @@ export default {
     msg: String
   },
   setup() {
-    const refValue = ref(42)
-    const state = reactive({
-      count: 0,
-      double: computed(() => state.count * 2)
-    })
-
-    function increment() {
-      state.count++
-    }
-
-    return {
-      state,
-      increment
-    }
-  }
+    const { recObj, incrementComp, refValue } = fileCompositionOne()
+    const { secondRObj, clickIncrement } = fileCompositionTwo()
+    const { vuexRObj, incrementVuex } = fileCompositionVuex()
+    return { recObj, incrementComp, refValue, secondRObj, clickIncrement, vuexRObj, incrementVuex }
+  },
+  computed: mapState([
+    'count'
+  ]),
+  methods: mapMutations([
+    'increment'
+  ])
 };
 </script>
 

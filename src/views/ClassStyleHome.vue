@@ -4,14 +4,19 @@
       <v-card class="pa-3">
         <div>routerProp: {{ routerProp }}</div>
         <div>routerProp2: {{ routerProp2 }}</div>
-        <v-text-field v-model="msg" label="Number Message" filled type="number"></v-text-field>
+        <v-text-field
+          v-model="msg"
+          label="Number Message"
+          filled
+          type="number"
+        ></v-text-field>
 
         <p>msg: {{ msg }}</p>
         <p>helloMsg: {{ helloMsg }}</p>
         <p>computed msg: {{ computedMsg }}</p>
 
-        <h3>Clicked: {{ count }} times</h3>
-        <v-btn @click="increment">+</v-btn>
+        <h3>State Count: {{ count }}</h3>
+        <v-btn @click="increment" color="purple" dark>+ vuex</v-btn>
 
         <v-btn class="ma-2" @click="greet">Greet with annyoning alert</v-btn>
       </v-card>

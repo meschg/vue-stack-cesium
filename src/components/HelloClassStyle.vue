@@ -14,7 +14,7 @@
         target="_blank"
         class="primary ma-2"
       >
-        <span class="ma-2">vue class component Github</span>
+        <span class="ma-2">vue-class-component on Github</span>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
     </v-container>

@@ -15,7 +15,7 @@ A minimal sample configuration project which shows how to combine and use certai
 * cesium (always latest)
 * mdi-fonts & icons by CDN (see index.html)
 
-## coming next
+## coming up next
 * vue 3  (vue 3 requires vuetify 3)
 * vuetify 3
 

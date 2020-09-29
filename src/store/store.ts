@@ -7,11 +7,6 @@ Vue.use(Vuex)
 
 var csViewer = null;
 
-interface CounterState {
-  count: number
-}
-
-
 export default new Vuex.Store({
   state: {
     cesiumSettings: {
@@ -20,7 +15,6 @@ export default new Vuex.Store({
     dataSets: [],
     name1: "Vue-Stack-Cesium Demo",
     count: 0
-
   },
 
   mutations: {
