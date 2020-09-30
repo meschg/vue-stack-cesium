@@ -15,7 +15,7 @@
     "vue-property-decorator": "^9.0.0",
     "vue-router": "^3.4.5",
     "vue-shortkey": "^3.1.7",
-    "vuetify": "^2.3.10",
+    "vuetify": "^2.3.12",
     "vuex": "^3.5.1"
   },
   "devDependencies": {
@@ -30,7 +30,7 @@
     "@web-types/vuetify": "^2.0.15-1",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.10.0",
-    "eslint-plugin-vue": "^6.2.2",
+    "eslint-plugin-vue": "^7.0.0",
     "sass": "^1.26.11",
     "sass-loader": "^10.0.2",
     "strip-pragma-loader": "^1.0.0",

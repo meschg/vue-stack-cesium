@@ -94,7 +94,7 @@ export default class AppBar extends AppProps {
     "vue-property-decorator": "9.0.0",
     "vue-router": "3.4.3",
     "vue-shortkey": "3.1.7",
-    "vuetify": "2.3.10",
+    "vuetify": "2.3.12",
     "vuex": "3.5.1",
     "typescript": "4.0.3",
   }
