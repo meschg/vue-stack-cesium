@@ -114,14 +114,10 @@
 export default {
   name: "HelloVue",
   props: {
-    msg: String
+    msg: String,
   },
-  computed: {
-
-  },
-  methods: {
-
-  }
+  computed: {},
+  methods: {},
 };
 </script>
 

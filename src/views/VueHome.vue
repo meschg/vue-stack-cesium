@@ -17,7 +17,7 @@ import HelloVue from "@/components/HelloVue.vue";
 export default {
   name: "vueHome",
   components: {
-    HelloVue
-  }
+    HelloVue,
+  },
 };
 </script>

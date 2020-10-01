@@ -23,32 +23,35 @@
 </template>
 
 <script>
-import { ref, reactive, computed, toRefs } from '@vue/composition-api'
-import fileCompositionOne from "@/composables/HelloComposableOne"
-import fileCompositionTwo from "@/composables/HelloComposableTwo"
-import fileCompositionVuex from "@/composables/HelloComposableVuex"
+import { ref, reactive, computed, toRefs } from "@vue/composition-api";
+import fileCompositionOne from "@/composables/HelloComposableOne";
+import fileCompositionTwo from "@/composables/HelloComposableTwo";
+import fileCompositionVuex from "@/composables/HelloComposableVuex";
 
-import { mapState, mapMutations } from 'vuex'
+import { mapState, mapMutations } from "vuex";
 
 export default {
   name: "HelloVue",
   props: {
-    msg: String
+    msg: String,
   },
   setup() {
-    const { recObj, incrementComp, refValue } = fileCompositionOne()
-    const { secondRObj, clickIncrement } = fileCompositionTwo()
-    const { vuexRObj, incrementVuex } = fileCompositionVuex()
-    return { recObj, incrementComp, refValue, secondRObj, clickIncrement, vuexRObj, incrementVuex }
+    const { recObj, incrementComp, refValue } = fileCompositionOne();
+    const { secondRObj, clickIncrement } = fileCompositionTwo();
+    const { vuexRObj, incrementVuex } = fileCompositionVuex();
+    return {
+      recObj,
+      incrementComp,
+      refValue,
+      secondRObj,
+      clickIncrement,
+      vuexRObj,
+      incrementVuex,
+    };
   },
-  computed: mapState([
-    'count'
-  ]),
-  methods: mapMutations([
-    'increment'
-  ])
+  computed: mapState(["count"]),
+  methods: mapMutations(["increment"]),
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

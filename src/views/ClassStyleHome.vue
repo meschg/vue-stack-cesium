@@ -26,20 +26,20 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import { mapState, mapMutations } from 'vuex'
-import router from "@/router/router"
+import { Component, Prop, Vue } from "vue-property-decorator";
+import { mapState, mapMutations } from "vuex";
+import router from "@/router/router";
 
 // import other components
-import HelloClassStyle from '@/components/HelloClassStyle.vue'
+import HelloClassStyle from "@/components/HelloClassStyle.vue";
 
 // We declare the props separately to make props types inferable.
 const AppProps = Vue.extend({
   props: {
     routerProp: String,
     routerProp2: String,
-  }
-})
+  },
+});
 
 // The @Component decorator indicates the class is a Vue component
 @Component({
@@ -48,53 +48,48 @@ const AppProps = Vue.extend({
     HelloClassStyle,
   },
   // Vuex's component binding helper can use here
-  computed: mapState([
-    'count'
-  ]),
-  methods: mapMutations([
-    'increment'
-  ])
+  computed: mapState(["count"]),
+  methods: mapMutations(["increment"]),
 })
-
 export default class ClassStyleHome extends AppProps {
   // Initial data can be declared as instance properties
-  msg: number = 123565343
-  name: string = "Typescript"
+  msg: number = 123565343;
+  name: string = "Typescript";
 
   // use prop values for initial data
-  helloMsg: string = 'Hello, ' + this.name
+  helloMsg: string = "Hello, " + this.name;
 
   // annotate refs type
   $refs!: {
     // helloComponent: Hello
-  }
+  };
 
   // additional declaration is needed to get the types correctly
   // when you declare some properties in `Component` decorator
-  count!: number
-  increment!: () => void
+  count!: number;
+  increment!: () => void;
 
   // lifecycle hook
   created() {
-    console.log("Class style created()")
+    console.log("Class style created()");
   }
 
   mounted() {
-    console.log("Class style mounted()")
+    console.log("Class style mounted()");
   }
 
   destroyed() {
-    console.log("Class style destroyed()")
+    console.log("Class style destroyed()");
   }
 
   // computed getters
   get computedMsg(): String {
-    return 'computed ' + this.msg
+    return "computed " + this.msg;
   }
 
   // Component methods can be declared as instance methods
   greet(): void {
-    alert('greeting: ' + this.msg)
+    alert("greeting: " + this.msg);
     //this.$refs.helloComponent.sayHello()
   }
 
@@ -102,12 +97,12 @@ export default class ClassStyleHome extends AppProps {
   storeActions(): void {
     //this.$store.dispatch('dispatchMuatation')
     //this.$store.commit('commitMutation')
-    console.log("Store-action called.")
+    console.log("Store-action called.");
   }
 
   routerActions(): void {
     //router.push("classStyle") // -> /user/123
-    console.log("Router called.")
+    console.log("Router called.");
   }
 }
 </script>

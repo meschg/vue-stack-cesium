@@ -1,4 +1,3 @@
-
 <template>
   <div>
     <v-btn
@@ -20,19 +19,18 @@
   </div>
 </template>
 
-
 <script lang="ts">
-import HelloCompositionAPIInternal from '@/components/HelloCompositionAPIInternal.vue'
-import HelloCompositionAPIExternal from '@/components/HelloCompositionAPIExternal.vue'
-import { mapState, mapMutations } from 'vuex'
+import HelloCompositionAPIInternal from "@/components/HelloCompositionAPIInternal.vue";
+import HelloCompositionAPIExternal from "@/components/HelloCompositionAPIExternal.vue";
+import { mapState, mapMutations } from "vuex";
 
-import { ref, reactive } from '@vue/composition-api'
+import { ref, reactive } from "@vue/composition-api";
 
 export default {
   name: "vueHome",
   components: {
-    HelloCompositionAPIInternal, HelloCompositionAPIExternal
-  }
+    HelloCompositionAPIInternal,
+    HelloCompositionAPIExternal,
+  },
 };
 </script>
-

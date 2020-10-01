@@ -22,48 +22,42 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import { mapState, mapMutations } from 'vuex'
-import router from "@/router/router"
+import { Component, Prop, Vue } from "vue-property-decorator";
+import { mapState, mapMutations } from "vuex";
+import router from "@/router/router";
 
 // We declare the props separately to make props types inferable.
 const AppProps = Vue.extend({
   props: {
     msg1: String,
-    msg2: String
-  }
-})
+    msg2: String,
+  },
+});
 
 @Component({
   components: {},
   // Vuex's component binding helper can use here
   computed: mapState([]),
-  methods: mapMutations([])
+  methods: mapMutations([]),
 })
-
 export default class HelloClassStyle extends AppProps {
-  localString: string = "Testing string"
+  localString: string = "Testing string";
   localCounter: number = 42;
 
   increment() {
-    this.localCounter++
-    console.log("Hello, class increment called.")
+    this.localCounter++;
+    console.log("Hello, class increment called.");
   }
 
-  created() {
-  }
+  created() {}
 
-  mounted() {
+  mounted() {}
 
-  }
-
-  destroyed() {
-
-  }
+  destroyed() {}
 
   // computed
   get computedMsg(): string {
-    return 'Computed '
+    return "Computed ";
   }
 
   storeActions(): void {
@@ -72,13 +66,11 @@ export default class HelloClassStyle extends AppProps {
   }
 
   routerActions(): void {
-    router.push("classStyle") // -> /user/123
-    console.log("Called for router")
+    router.push("classStyle"); // -> /user/123
+    console.log("Called for router");
   }
 }
-
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

@@ -23,49 +23,42 @@
 </template>
 
 <script>
-import { ref, reactive, computed } from '@vue/composition-api'
-import { mapState, mapMutations } from 'vuex'
+import { ref, reactive, computed } from "@vue/composition-api";
+import { mapState, mapMutations } from "vuex";
 
 export default {
   name: "HelloVue",
   props: {
-    msg: String
+    msg: String,
   },
   setup() {
-    return useComposition()
+    return useComposition();
   },
-  computed: mapState([
-    'count'
-  ]),
-  methods: mapMutations([
-    'increment'
-  ]),
+  computed: mapState(["count"]),
+  methods: mapMutations(["increment"]),
 };
 
-
-
 function useComposition() {
-  const refValue = ref(42)
+  const refValue = ref(42);
   const recObj = reactive({
     clickCount: 0,
     itemList: ["cheese", "apple", "Jonny"],
     double: computed(() => recObj.clickCount * 2),
-    itemAmount: computed((() => itemList.length))
-  })
+    itemAmount: computed(() => itemList.length),
+  });
 
   function incrementComp() {
-    recObj.clickCount++
-    refValue.value += refValue.value
-    recObj.itemList.push(recObj.clickCount + " + " + refValue.value)
+    recObj.clickCount++;
+    refValue.value += refValue.value;
+    recObj.itemList.push(recObj.clickCount + " + " + refValue.value);
   }
 
   return {
     recObj,
     incrementComp,
     refValue,
-  }
+  };
 }
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

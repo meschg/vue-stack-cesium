@@ -20,7 +20,7 @@
 <script>
 export default {
   name: "HelloCesium",
-  props: []
+  props: [],
 };
 </script>
 

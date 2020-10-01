@@ -56,48 +56,39 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import { mapState, mapMutations } from 'vuex'
-import router from "@/router/router"
-
+import { Component, Prop, Vue } from "vue-property-decorator";
+import { mapState, mapMutations } from "vuex";
+import router from "@/router/router";
 
 // We declare the props separately to make props types inferable.
 const AppProps = Vue.extend({
-  props: {
-  }
-})
+  props: {},
+});
 
 @Component({
-  components: {
-
-  },
+  components: {},
   // Vuex's component binding helper can use here
-  computed: mapState([
-    'count'
-  ]),
-  methods: mapMutations([
-    'increment'
-  ]),
-  template: '<button @click="onClick">Click!</button>'
+  computed: mapState(["count"]),
+  methods: mapMutations(["increment"]),
+  template: '<button @click="onClick">Click!</button>',
 })
-
 export default class AppBar extends AppProps {
   // inital data
-  msg: number = 123
-  dynamicProp: string = "Dynamic"
-  routerProp: string = "prop"
+  msg: number = 123;
+  dynamicProp: string = "Dynamic";
+  routerProp: string = "prop";
 
   dep = {
-    "cesium": "1.73.0",
-    "vue": "2.6.12",
+    cesium: "1.73.0",
+    vue: "2.6.12",
     "vue-class-component": "7.2.5",
     "vue-property-decorator": "9.0.0",
     "vue-router": "3.4.3",
     "vue-shortkey": "3.1.7",
-    "vuetify": "2.3.12",
-    "vuex": "3.5.1",
-    "typescript": "4.0.3",
-  }
+    vuetify: "2.3.12",
+    vuex: "3.5.1",
+    typescript: "4.0.3",
+  };
 
   routerActions() {
     //https://router.vuejs.org/guide/essentials/navigation.html
@@ -109,8 +100,8 @@ export default class AppBar extends AppProps {
     // object
     //router.push({ path: 'home' })
 
-    const propConst = 'const456'
-    let propLet = "let123"
+    const propConst = "const456";
+    let propLet = "let123";
     // routes do string only
     //let compData: string = "Stringified" + this.msg
     let compData: string = this.dynamicProp;
@@ -120,15 +111,17 @@ export default class AppBar extends AppProps {
     // TODO: check if route is already active before pushing it
     //router.push({ name: 'ClassStyleHome', params: { routerProp: '', routerProp2: "456" } })
     //router.push({ name: 'ClassStyleHome', params: { routerProp: '123', routerProp2: propConst } })
-    //router.push({ name: 'ClassStyleHome', params: { routerProp: propLet, routerProp2: propConst } })        
-    router.push({ name: 'ClassStyleHome', params: { routerProp: compData, routerProp2: propConst } })
+    //router.push({ name: 'ClassStyleHome', params: { routerProp: propLet, routerProp2: propConst } })
+    router.push({
+      name: "ClassStyleHome",
+      params: { routerProp: compData, routerProp2: propConst },
+    });
 
     // with query, resulting in /register?plan=private
     //router.push({ path: 'register', query: { plan: 'private' } })
 
     //router.push("classStyle") // -> /user/123
-    console.log("Called for router" + this.msg)
+    console.log("Called for router" + this.msg);
   }
-
 }
 </script>

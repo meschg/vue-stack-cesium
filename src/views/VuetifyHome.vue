@@ -11,11 +11,11 @@ export default {
   name: "Vuetify",
 
   components: {
-    HelloVuetify
+    HelloVuetify,
   },
 
   data: () => ({
     //
-  })
+  }),
 };
 </script>

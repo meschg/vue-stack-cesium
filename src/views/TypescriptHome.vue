@@ -1,4 +1,3 @@
-
 //https://github.com/vuejs/vue-class-component/blob/master/example/src/App.vue
 <template>
   <div>
@@ -27,18 +26,17 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import HelloTypescript from '@/components/HelloTypescript.vue'
-import { mapState, mapMutations } from 'vuex'
-
+import { Component, Prop, Vue } from "vue-property-decorator";
+import HelloTypescript from "@/components/HelloTypescript.vue";
+import { mapState, mapMutations } from "vuex";
 
 // We declare the props separately
 // to make props types inferable.
 const AppProps = Vue.extend({
   props: {
-    propMessage: String
-  }
-})
+    propMessage: String,
+  },
+});
 
 @Component({
   components: {
@@ -46,45 +44,40 @@ const AppProps = Vue.extend({
   },
 
   // Vuex's component binding helper can use here
-  computed: mapState([
-    'count'
-  ]),
-  methods: mapMutations([
-    'increment'
-  ])
+  computed: mapState(["count"]),
+  methods: mapMutations(["increment"]),
 })
-
 export default class TypescriptHome extends AppProps {
   // inital data
-  msg: number = 123
-  name: string = "TypescriptHome"
+  msg: number = 123;
+  name: string = "TypescriptHome";
 
   // use prop values for initial data
-  helloMsg: string = 'Hello, ' + this.name
+  helloMsg: string = "Hello, " + this.name;
 
   // annotate refs type
   $refs!: {
     // helloComponent: Hello
-  }
+  };
 
   // additional declaration is needed
   // when you declare some properties in `Component` decorator
-  count!: number
-  increment!: () => void
+  count!: number;
+  increment!: () => void;
 
   // lifecycle hook
   mounted() {
-    console.log("TypescriptHome: console log on mounted")
+    console.log("TypescriptHome: console log on mounted");
   }
 
   // computed
   get computedMsg() {
-    return 'computed ' + this.msg
+    return "computed " + this.msg;
   }
 
   // method
   greet() {
-    alert('greeting: ' + this.msg)
+    alert("greeting: " + this.msg);
     //this.$refs.helloComponent.sayHello()
   }
 
