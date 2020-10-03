@@ -7,7 +7,7 @@ Contributions in form of best practices or corrections are welcome!
 ## vue related features
 
 - vue 2.6.x
-- vuex 3.5.x
+- vuex 3.5.x with modules
 - vue-router 3.4.x
 - vuetify 2.3.x
 - vue-shortkey 3.1.x
@@ -56,4 +56,4 @@ vue ui
 
 ### Project Structure 2020-10-03
 
-![file-structure](https://user-images.githubusercontent.com/5106318/94988272-49575880-056c-11eb-854f-289b0efc7887.png)
+![file-structure-multi-store](https://user-images.githubusercontent.com/5106318/94992463-7d417680-058a-11eb-926a-8743c6eeb4b1.png)
