@@ -22,7 +22,7 @@
   </v-container>
 </template>
 
-<script>
+<script lang="ts">
 import { ref, reactive, computed } from "@vue/composition-api";
 import { mapState, mapMutations } from "vuex";
 

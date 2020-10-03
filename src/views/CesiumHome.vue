@@ -1,10 +1,11 @@
 <template>
   <div>
     <HelloCesium />
+    <p>$store.state.count: {{ $store.state.count }}</p>
   </div>
 </template>
 
-<script>
+<script lang="ts">
 // @ is an alias to /src
 import HelloCesium from "@/components/HelloCesium.vue";
 import { mapState, mapActions, mapMutations, mapGetters } from "vuex";

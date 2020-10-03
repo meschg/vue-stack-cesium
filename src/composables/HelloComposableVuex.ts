@@ -1,5 +1,6 @@
 import { ref, reactive, computed } from "@vue/composition-api";
 import { mapState, mapMutations } from "vuex";
+import store from "@/store/store";
 
 export default function fileCompositionVuex() {
   computed: mapState(["count"]);
@@ -9,10 +10,8 @@ export default function fileCompositionVuex() {
   });
 
   function incrementVuex() {
-    //@ts-ignore
-    this.$store.commit("increment");
-    //@ts-ignore
-    console.warn("Fancy vuex store action!" + this.count);
+    store.commit("increment");
+    console.log("Fancy vuex store action and count" + store.state.count);
   }
 
   return { vuexRObj, incrementVuex };

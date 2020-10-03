@@ -1,13 +1,16 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import Cesium from "../plugins/cesium";
-import { EllipsoidTerrainProvider } from "cesium";
+
+import * as moduleA from "@/store/storeModuleA";
+import moduleB from "@/store/storeModuleB";
 
 Vue.use(Vuex);
 
 var csViewer = null;
 
 export default new Vuex.Store({
+  modules: { moduleA, moduleB },
   state: {
     cesiumSettings: {
       fpsTarget: 60,
@@ -89,5 +92,4 @@ export default new Vuex.Store({
       });
     },
   },
-  modules: {},
 });

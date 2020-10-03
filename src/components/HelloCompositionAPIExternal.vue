@@ -22,7 +22,7 @@
   </v-container>
 </template>
 
-<script>
+<script lang="ts">
 import { ref, reactive, computed, toRefs } from "@vue/composition-api";
 import fileCompositionOne from "@/composables/HelloComposableOne";
 import fileCompositionTwo from "@/composables/HelloComposableTwo";

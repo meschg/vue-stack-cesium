@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import HelloVuetify from "@/components/HelloVuetify.vue";
 
 export default {
