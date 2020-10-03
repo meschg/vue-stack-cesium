@@ -21,11 +21,13 @@ export default {
   },
 
   actions: {
+    //@ts-ignore
     aIncB({ commit }) {
       commit("mIncB");
       console.log("aIncB");
     },
 
+    //@ts-ignore
     aConsoleLogPayload({ commit }, payload: any) {
       commit("mConsoleLogPayload", payload);
       console.log("aConsoleLogPayload");

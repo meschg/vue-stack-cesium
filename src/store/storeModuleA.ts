@@ -1,4 +1,5 @@
 import { GetterTree, MutationTree, ActionTree } from "vuex";
+import store from "./store";
 
 class State {
   userId: string | null = null;
@@ -7,10 +8,12 @@ class State {
 }
 
 const mutations = <MutationTree<State>>{
-  mUpdateModuleA: (state: any, payload: { a: string; n: number }) => {
-    console.log("countRootStore: " + state.count);
+  mUpdateModuleA: (state, payload: { a: string; n: number }) => {
     state.valueA += payload.a;
     state.numberA += payload.n;
+    console.log(
+      "numberA: " + state.numberA + "|| countRootStore: " + store.state.count
+    );
   },
 };
 
@@ -28,6 +31,7 @@ const getters = <GetterTree<State, any>>{
 
 const moduleA = {
   namespaced: false,
+  modules: {},
   state: new State(),
   mutations: mutations,
   actions: actions,

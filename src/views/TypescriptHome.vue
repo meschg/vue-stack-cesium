@@ -13,8 +13,9 @@
           filled
           type="text"
         ></v-text-field>
-        <p>helloMsg: {{ helloMsg }} || computed msg: {{ computedMsg }}</p>
-        <v-btn class="ma-2" @click="greet">Greet with annyoning alert</v-btn>
+        <p>
+          helloMsg: {{ helloMsg }} || Upper Case computed: {{ computedMsg }}
+        </p>
       </v-card>
       <v-card class="pa-2 ma-2">
         <v-card-title class="pb-0">Vuex Root</v-card-title>
@@ -97,7 +98,7 @@ export default class TypescriptHome extends AppProps {
 
   // computed
   get computedMsg() {
-    return "computed " + this.helloMsg;
+    return this.helloMsg.toString().toUpperCase();
   }
 
   get payloadModuleB() {
