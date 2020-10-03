@@ -1,5 +1,7 @@
-import store from "./store";
-
+/**
+ * Also a way to define stores but not sure how to fix make this typescript compatible...
+ * TODO: Typescript compatible definition
+ */
 export default {
   state: {
     countB: 0,

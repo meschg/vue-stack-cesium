@@ -101,7 +101,10 @@ export default class TypescriptHome extends AppProps {
   }
 
   get payloadModuleB() {
-    return { desc: "moduleBPayload, count", countB: this.moduleB.countB };
+    return {
+      desc: "moduleBPayload, count",
+      countB: this.$store.state.moduleB.countB,
+    };
   }
 
   // method
