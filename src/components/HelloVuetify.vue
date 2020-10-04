@@ -1,38 +1,43 @@
 <template>
   <v-container>
-    <v-layout text-center wrap>
-      <v-flex xs4 pa-4>
-        <v-btn
-          block
-          @click="buttonClickFunction"
-          @shortkey="buttonShortkeyFunction"
-          v-shortkey.once="['space']"
-        >
-          <v-icon>mdi-email</v-icon> eMail with shortkey (Space)
-        </v-btn>
-      </v-flex>
+    <v-row class="text-center">
+      <v-row>
+        <v-col cols="4">
+          <v-btn
+            block
+            @click="buttonClickFunction"
+            @shortkey="buttonShortkeyFunction"
+            v-shortkey.once="['space']"
+          >
+            <v-icon>mdi-email</v-icon> eMail with shortkey (Space)
+          </v-btn>
+        </v-col>
 
-      <v-flex xs4 pa-4>
-        <v-alert dense outlined prominent text type="success">
-          {{ displayText }} Count: {{ buttonCounter }}
-        </v-alert>
-      </v-flex>
+        <v-col cols="4">
+          <v-alert dense outlined prominent text type="success">
+            {{ displayText }} Count: {{ buttonCounter }}
+          </v-alert>
+        </v-col>
 
-      <v-flex xs4 pa-4>
-        <v-text-field v-model="dataBinds.textField"></v-text-field>
-      </v-flex>
+        <v-col cols="4">
+          <v-text-field v-model="dataBinds.textField"></v-text-field>
+        </v-col>
+      </v-row>
 
-      <v-flex xs12>
+      <v-col cols="12">
         <v-img
           :src="require('../assets/logo.svg')"
           class="my-3"
           contain
           height="200"
-        ></v-img>
-      </v-flex>
+        />
+      </v-col>
 
-      <v-flex mb-4>
-        <h1 class="display-2 font-weight-bold mb-3">Welcome to Vuetify</h1>
+      <v-col class="mb-4">
+        <h1 class="display-2 font-weight-bold mb-3">
+          Welcome to Vuetify
+        </h1>
+
         <p class="subheading font-weight-regular">
           For help and collaboration with other Vuetify developers,
           <br />please join our online
@@ -40,53 +45,62 @@
             >Discord Community</a
           >
         </p>
-      </v-flex>
+      </v-col>
 
-      <v-flex mb-5 xs12>
-        <h2 class="headline font-weight-bold mb-3">What's next?</h2>
+      <v-col class="mb-5" cols="12">
+        <h2 class="headline font-weight-bold mb-3">
+          What's next?
+        </h2>
 
-        <v-layout justify-center>
+        <v-row justify="center">
           <a
             v-for="(next, i) in whatsNext"
             :key="i"
             :href="next.href"
             class="subheading mx-3"
             target="_blank"
-            >{{ next.text }}</a
           >
-        </v-layout>
-      </v-flex>
+            {{ next.text }}
+          </a>
+        </v-row>
+      </v-col>
 
-      <v-flex xs12 mb-5>
-        <h2 class="headline font-weight-bold mb-3">Important Links</h2>
+      <v-col class="mb-5" cols="12">
+        <h2 class="headline font-weight-bold mb-3">
+          Important Links
+        </h2>
 
-        <v-layout justify-center>
+        <v-row justify="center">
           <a
             v-for="(link, i) in importantLinks"
             :key="i"
             :href="link.href"
             class="subheading mx-3"
             target="_blank"
-            >{{ link.text }}</a
           >
-        </v-layout>
-      </v-flex>
+            {{ link.text }}
+          </a>
+        </v-row>
+      </v-col>
 
-      <v-flex xs12 mb-5>
-        <h2 class="headline font-weight-bold mb-3">Ecosystem</h2>
+      <v-col class="mb-5" cols="12">
+        <h2 class="headline font-weight-bold mb-3">
+          Ecosystem
+        </h2>
 
-        <v-layout justify-center>
+        <v-row justify="center">
           <a
             v-for="(eco, i) in ecosystem"
             :key="i"
             :href="eco.href"
             class="subheading mx-3"
             target="_blank"
-            >{{ eco.text }}</a
           >
-        </v-layout>
-      </v-flex>
-    </v-layout>
+            {{ eco.text }}
+          </a>
+        </v-row>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
@@ -143,7 +157,7 @@ export default {
       },
       {
         text: "Select a layout",
-        href: "https://vuetifyjs.com/layout/pre-defined",
+        href: "https://vuetifyjs.com/getting-started/pre-made-layouts",
       },
       {
         text: "Frequently Asked Questions",
