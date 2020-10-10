@@ -111,14 +111,16 @@
 </template>
 
 <script lang="ts">
-export default {
+import Vue from "vue";
+
+export default Vue.extend({
   name: "HelloVue",
   props: {
     msg: String,
   },
   computed: {},
   methods: {},
-};
+});
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

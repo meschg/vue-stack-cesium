@@ -4,7 +4,8 @@
       <h2>File One</h2>
       <h3>{{ refValue }}</h3>
       <p>
-        clickCount is: {{ recObj.clickCount }}, double is: {{ recObj.double }}
+        clickCount is: {{ recObj.clickCount }} || double is:
+        {{ recObj.double }} || Items: {{ recObj.itemAmount }}
       </p>
       <p>{{ recObj.itemList }}</p>
       <v-btn @click="incrementComp" class="primary ma-2"> @click() </v-btn>
@@ -27,10 +28,11 @@ import { ref, reactive, computed, toRefs } from "@vue/composition-api";
 import fileCompositionOne from "@/composables/HelloComposableOne";
 import fileCompositionTwo from "@/composables/HelloComposableTwo";
 import fileCompositionVuex from "@/composables/HelloComposableVuex";
-
 import { mapState, mapMutations } from "vuex";
 
-export default {
+import Vue from "vue";
+
+export default Vue.extend({
   name: "HelloVue",
   props: {
     msg: String,
@@ -51,7 +53,7 @@ export default {
   },
   computed: mapState(["count"]),
   methods: mapMutations(["increment"]),
-};
+});
 </script>
 
 <style scoped></style>

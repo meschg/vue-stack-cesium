@@ -9,9 +9,10 @@
 // @ is an alias to /src
 import HelloCesium from "@/components/HelloCesium.vue";
 import { mapState, mapActions, mapMutations, mapGetters } from "vuex";
+import Vue from "vue";
 
-export default {
-  name: "vueHome",
+export default Vue.extend({
+  name: "CesiumHome",
   components: {
     HelloCesium,
   },
@@ -33,5 +34,5 @@ export default {
     });
   },
   mounted: function() {},
-};
+});
 </script>

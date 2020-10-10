@@ -105,9 +105,10 @@
 </template>
 
 <script lang="ts">
-export default {
-  name: "HelloVuetify",
+import Vue from "vue";
 
+export default Vue.extend({
+  name: "HelloVuetify",
   data: () => ({
     displayText: "InitialText",
     buttonCounter: 0,
@@ -178,5 +179,5 @@ export default {
       console.log("Button shortkey function called");
     },
   },
-};
+});
 </script>

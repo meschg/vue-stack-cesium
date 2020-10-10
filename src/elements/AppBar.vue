@@ -81,11 +81,11 @@ export default class AppBar extends AppProps {
   dep = {
     cesium: "1.74.0",
     vue: "2.6.12",
-    "vue-class-component": "7.2.5",
-    "vue-property-decorator": "9.0.0",
+    "vue-class-component": "7.2.6",
+    "vue-property-decorator": "9.0.2",
     "vue-router": "3.4.3",
     "vue-shortkey": "3.1.7",
-    vuetify: "2.3.12",
+    vuetify: "2.3.13",
     vuex: "3.5.1",
     typescript: "4.0.3",
   };

@@ -22,15 +22,13 @@
 <script lang="ts">
 import HelloCompositionAPIInternal from "@/components/HelloCompositionAPIInternal.vue";
 import HelloCompositionAPIExternal from "@/components/HelloCompositionAPIExternal.vue";
-import { mapState, mapMutations } from "vuex";
+import Vue from "vue";
 
-import { ref, reactive } from "@vue/composition-api";
-
-export default {
-  name: "vueHome",
+export default Vue.extend({
+  name: "CompositionAPI",
   components: {
     HelloCompositionAPIInternal,
     HelloCompositionAPIExternal,
   },
-};
+});
 </script>

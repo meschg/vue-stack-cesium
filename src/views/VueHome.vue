@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div>
     <v-container>
       <v-card class="pa-4">
         <img alt="Vue logo" src="../assets/logo.png" />
@@ -11,13 +11,13 @@
 </template>
 
 <script lang="ts">
-// @ is an alias to /src
 import HelloVue from "@/components/HelloVue.vue";
+import Vue from "vue";
 
-export default {
-  name: "vueHome",
+export default Vue.extend({
+  name: "VueHome",
   components: {
     HelloVue,
   },
-};
+});
 </script>

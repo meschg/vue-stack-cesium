@@ -10,16 +10,15 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloTypescript from './components/HelloTypescript.vue';
+import { Component, Vue } from "vue-property-decorator";
 import AppBar from "@/elements/AppBar.vue";
 
 @Component({
   components: {
-    HelloTypescript, AppBar
+    AppBar,
   },
 })
-export default class App extends Vue { }
+export default class App extends Vue {}
 </script>
 
 <style lang="scss">
