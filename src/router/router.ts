@@ -45,6 +45,10 @@ const routes = [
     name: "ClassStyleHome",
     component: ClassStyleHome,
     props: true,
+    beforeEnter(routeTo: any, routeFrom: any, next: Function) {
+      console.log("Route enter hook");
+      next();
+    },
   },
   {
     path: "/compositionAPI",
@@ -62,4 +66,16 @@ const router = new VueRouter({
   routes,
 });
 
+router.beforeEach((routeTo, routeFrom, next) => {
+  if (routeTo.path == routeFrom.path) {
+    console.log("double navigation");
+    return;
+  }
+  console.log(`From ${routeFrom.path} to ${routeTo.path}`);
+  next();
+});
+
+router.afterEach(() => {
+  //console.log("After each route triggered");
+});
 export default router;

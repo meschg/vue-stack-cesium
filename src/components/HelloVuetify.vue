@@ -167,12 +167,12 @@ export default {
     ],
   }),
   methods: {
-    buttonClickFunction: function(event) {
+    buttonClickFunction: function(event: any) {
       this.displayText = "Button was clicked";
       this.buttonCounter++;
       console.log("Button click function called");
     },
-    buttonShortkeyFunction: function(event) {
+    buttonShortkeyFunction: function(event: any) {
       this.displayText = "Button triggerd by shortkey";
       this.buttonCounter++;
       console.log("Button shortkey function called");
