@@ -3,7 +3,7 @@
     <HelloVuetify />
   </div>
 </template>
-
++ vuex
 <script lang="ts">
 import HelloVuetify from "@/components/HelloVuetify.vue";
 import Vue from "vue";

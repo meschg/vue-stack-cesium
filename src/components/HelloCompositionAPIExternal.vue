@@ -18,7 +18,7 @@
     <v-card class="ma-4 pa-4">
       <h2>State in File</h2>
       <h3>State Count: {{ count }}</h3>
-      <v-btn @click="incrementVuex" color="purple" dark>+ vuex</v-btn>
+      <v-btn @click="incrementVuex" color="purple" dark>+1 vuex</v-btn>
     </v-card>
   </v-container>
 </template>

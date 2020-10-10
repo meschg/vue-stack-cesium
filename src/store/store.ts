@@ -9,23 +9,14 @@ import cesiumStore from "@/store/storeCesium";
 Vue.use(Vuex);
 
 class State {
+  // get a strongly-typed store.state in each module
+  cesium!: typeof cesiumStore.state;
+  moduleA!: typeof moduleA.state;
+  moduleB!: typeof moduleB.state;
+
   dataSets = [];
   count: number = 0;
 }
-
-const mutations = <MutationTree<State>>{
-  mSetData(state, dataload) {
-    state.dataSets = dataload;
-    console.log("mSetData: " + state.dataSets);
-  },
-
-  increment(state) {
-    console.log(
-      "count-root: " + state.count + " countB: " + moduleB.state.countB
-    );
-    state.count++;
-  },
-};
 
 const actions = <ActionTree<State, any>>{
   aLoad1stDataSet({ commit }) {
@@ -51,12 +42,33 @@ const actions = <ActionTree<State, any>>{
   },
 };
 
+const mutations = <MutationTree<State>>{
+  mSetData(state, dataload) {
+    state.dataSets = dataload;
+    console.log("mSetData: " + state.dataSets);
+  },
+
+  increment(state) {
+    console.log(
+      "count-root: " + state.count + " countB: " + moduleB.state.countB
+    );
+    state.count++;
+  },
+};
+
 const getters = <GetterTree<State, any>>{};
+
+export interface RootState {
+  state: State;
+  cesium: typeof cesiumStore;
+  moduleA: typeof moduleA;
+  moduleB: typeof moduleB;
+}
 
 export default new Vuex.Store({
   modules: { cesium: cesiumStore, moduleA, moduleB },
   state: new State(),
-  mutations: mutations,
   actions: actions,
+  mutations: mutations,
   getters: getters,
 });

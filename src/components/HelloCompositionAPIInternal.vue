@@ -3,7 +3,7 @@
     <v-card class="ma-4 pa-4">
       <h2>State in Components</h2>
       <h3>State Count: {{ count }}</h3>
-      <v-btn @click="increment" color="purple" dark>+ vuex</v-btn>
+      <v-btn @click="increment" color="purple" dark>+1 vuex</v-btn>
     </v-card>
     <v-card class="ma-4 pa-4">
       <h2>{{ refValue }}</h2>

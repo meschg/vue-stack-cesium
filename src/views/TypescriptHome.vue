@@ -20,7 +20,7 @@
       <v-card class="pa-2 ma-2">
         <v-card-title class="pb-0">Vuex Root</v-card-title>
         <h3>State Count: {{ count }}</h3>
-        <v-btn @click="increment" color="purple" dark>+ vuex</v-btn>
+        <v-btn @click="increment" color="purple" dark>+1 vuex</v-btn>
       </v-card>
       <v-card class="pa-2 ma-2">
         <v-card-title class="pb-0">Vuex Module A</v-card-title>
@@ -35,7 +35,7 @@
       <v-card class="pa-2 ma-2">
         <v-card-title class="pb-0">Vuex Module B</v-card-title>
         <p>countB: {{ moduleB.countB }}</p>
-        <v-btn @click="aIncB" color="light gray">aIncB ModuleB</v-btn>
+        <v-btn @click="aIncB" color="light gray">+1 ModuleB</v-btn>
         <br />
         <br />
         <p>payload B: {{ moduleB.lastPayload }} ||</p>

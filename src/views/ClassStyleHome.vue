@@ -16,7 +16,7 @@
         <p>computed msg: {{ computedMsg }}</p>
 
         <h3>State Count: {{ count }}</h3>
-        <v-btn @click="increment" color="purple" dark>+ vuex</v-btn>
+        <v-btn @click="increment" color="purple" dark>+1 vuex</v-btn>
 
         <v-btn class="ma-2" @click="greet">Greet with annyoning alert</v-btn>
       </v-card>

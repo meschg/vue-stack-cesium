@@ -1,7 +1,7 @@
 import { GetterTree, MutationTree, ActionTree } from "vuex";
 import Cesium from "../plugins/cesium";
 
-var csViewer = null;
+let csViewer = null;
 
 class State {
   cesiumSettings = {
@@ -9,9 +9,21 @@ class State {
   };
 }
 
+const actions = <ActionTree<State, any>>{
+  aCsInit({ commit }) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        console.log("aCsInit");
+        commit("mCsInit");
+        resolve();
+      }, 10);
+    });
+  },
+};
+
 const mutations = <MutationTree<State>>{
   mCsInit(state) {
-    let imageryViewModels: any = [];
+    const imageryViewModels: any = [];
     imageryViewModels.push(
       new Cesium.ProviderViewModel({
         name: "Natural Earth\u00a0II",
@@ -28,7 +40,7 @@ const mutations = <MutationTree<State>>{
       })
     );
 
-    let viewerData = {
+    const viewerData = {
       targetFrameRate: state.cesiumSettings.fpsTarget,
       fullscreenButton: false,
       imageryProviderViewModels: imageryViewModels, // added your Cesium Ion Token (main.ts) and remove this to get access to all layers
@@ -39,26 +51,14 @@ const mutations = <MutationTree<State>>{
   },
 };
 
-const actions = <ActionTree<State, any>>{
-  aCsInit({ commit }) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        console.log("aCsInit");
-        commit("mCsInit");
-        resolve();
-      }, 10);
-    });
-  },
-};
-
 const getters = <GetterTree<State, any>>{};
 
 const cesiumStore = {
   namespaced: false,
   modules: {},
   state: new State(),
-  mutations: mutations,
   actions: actions,
+  mutations: mutations,
   getters: getters,
 };
 
