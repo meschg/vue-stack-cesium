@@ -9,7 +9,7 @@ import cesiumStore from "@/store/storeCesium";
 Vue.use(Vuex);
 
 class State {
-  // get a strongly-typed store.state in each module
+  // get a typesafe store.state in each module
   cesium!: typeof cesiumStore.state;
   moduleA!: typeof moduleA.state;
   moduleB!: typeof moduleB.state;
@@ -66,7 +66,12 @@ export interface RootState {
 }
 
 export default new Vuex.Store({
-  modules: { cesium: cesiumStore, moduleA, moduleB },
+  modules: {
+    // sync names in root store get a typesafe store.state for each module
+    cesium: cesiumStore,
+    moduleA,
+    moduleB,
+  },
   state: new State(),
   actions: actions,
   mutations: mutations,
