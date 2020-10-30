@@ -83,11 +83,11 @@ export default class AppBar extends AppProps {
     vue: "2.6.12",
     "vue-class-component": "7.2.6",
     "vue-property-decorator": "9.0.2",
-    "vue-router": "3.4.7",
+    "vue-router": "3.4.8",
     "vue-shortkey": "3.1.7",
-    vuetify: "2.3.15",
+    vuetify: "2.3.16",
     vuex: "3.5.1",
-    typescript: "4.0.3",
+    typescript: "4.0.5",
   };
 
   routerActions() {
