@@ -62,6 +62,7 @@ export default Vue.extend({
   methods: {
     ...mapMutations(["increment"]),
     compositonCallFunction() {
+      //@ts-ignore
       this.incrementVuex(); // <- Working but not typesave :/
     },
   },
