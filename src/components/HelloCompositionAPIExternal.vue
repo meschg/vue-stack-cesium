@@ -20,6 +20,13 @@
       <h3>State Count: {{ count }}</h3>
       <v-btn @click="incrementVuex" color="purple" dark>+1 vuex</v-btn>
     </v-card>
+
+    <v-card class="ma-4 pa-4">
+      <h2>CompositionAPI in Call</h2>
+      <p>This call works but shows error in VS Code :(</p>
+      <h3>State Count: {{ count }}</h3>
+      <v-btn @click="compositonCallFunction" class="error" dark>+1 vuex</v-btn>
+    </v-card>
   </v-container>
 </template>
 
@@ -52,7 +59,12 @@ export default Vue.extend({
     };
   },
   computed: mapState(["count"]),
-  methods: mapMutations(["increment"]),
+  methods: {
+    ...mapMutations(["increment"]),
+    compositonCallFunction() {
+      this.incrementVuex(); // <- Working but not typesave :/
+    },
+  },
 });
 </script>
 
