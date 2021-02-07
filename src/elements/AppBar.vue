@@ -81,7 +81,7 @@ export default class AppBar extends AppProps {
   dep = {
     "@vue/composition-api": "1.0.0-rc.1",
     axios: "0.21.1",
-    cesium: "1.77.0",
+    cesium: "1.78.0",
     vue: "2.6.12",
     "vue-class-component": "7.2.6",
     "vue-property-decorator": "9.1.2",
