@@ -8,22 +8,22 @@ Contributions in form of best practices or corrections are welcome!
 
 - vue 2.6.x
 - vuex 3.5.x with modules
-- vue-router 3.4.x
-- vuetify 2.3.x
+- vue-router 3.5.x
+- vuetify 2.4.x
 - vue-shortkey 3.1.x
 - vue class component 7.2.x
-- vue composition API plugin 1.0.0-beta-x
+- vue composition API plugin 1.0.0-rc.x
 
 ## other useful features
 
-- Typescript 4.0.x
+- Typescript 4.x.y
 - cesium (always latest)
 - mdi-fonts & icons by CDN (see index.html)
 
 ## coming up next
 
 - vue 3 (vue 3 requires vuetify 3)
-- vuetify 3 (Q1 2021)
+- vuetify 3 (~Q3 2021)
 
 ## Project setup
 
