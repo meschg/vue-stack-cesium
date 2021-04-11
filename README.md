@@ -22,7 +22,7 @@ Contributions in form of best practices or corrections are welcome!
 
 ## coming up next
 
-- vue 3 (vue 3 requires vuetify 3)
+- Complete rebuild/migration with vue 3 (vue 3 requires vuetify 3)
 - vuetify 3 (~Q3 2021)
 
 ## Project setup
