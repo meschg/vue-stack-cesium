@@ -79,17 +79,17 @@ export default class AppBar extends AppProps {
   routerProp: string = "prop";
 
   dep = {
-    "@vue/composition-api": "1.0.0-rc.5",
+    "@vue/composition-api": "1.0.0-rc.6",
     axios: "0.21.1",
-    cesium: "1.79.1",
+    cesium: "1.80.0",
     vue: "2.6.12",
     "vue-class-component": "7.2.6",
     "vue-property-decorator": "9.1.2",
     "vue-router": "3.5.1",
     "vue-shortkey": "3.1.7",
-    vuetify: "2.4.7",
+    vuetify: "2.4.9",
     vuex: "3.6.2",
-    typescript: "4.2.3",
+    typescript: "4.2.4",
   };
 
   routerActions() {
