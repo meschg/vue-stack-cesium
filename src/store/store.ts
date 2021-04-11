@@ -20,7 +20,7 @@ class State {
 
 const actions = <ActionTree<State, any>>{
   aLoad1stDataSet({ commit }) {
-    return new Promise((resolve, reject) => {
+    return new Promise<void>((resolve, reject) => {
       setTimeout(() => {
         let payload = { dataSetIndex: 1, data: 42 };
         console.log("aLoad1stDataSet");
@@ -31,7 +31,7 @@ const actions = <ActionTree<State, any>>{
   },
 
   aLoad2ndDataSet({ commit }) {
-    return new Promise((resolve, reject) => {
+    return new Promise<void>((resolve, reject) => {
       setTimeout(() => {
         let dataload = { dataSetIndex: 2, data: "Towel" };
         console.log("aLoad2ndDataSet");
