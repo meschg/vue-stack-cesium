@@ -9,7 +9,7 @@
             @shortkey="buttonShortkeyFunction"
             v-shortkey.once="['space']"
           >
-            <v-icon>mdi-email</v-icon> eMail with shortkey (Space)
+            <v-icon>mdi-email</v-icon> Icon-Button with shortkey (Space)
           </v-btn>
         </v-col>
 

@@ -23,7 +23,9 @@
 
     <v-card class="ma-4 pa-4">
       <h2>CompositionAPI in Call</h2>
-      <p>This call works but shows error in VS Code :(</p>
+      <p>
+        This call works but shows error in VS Code that it is not typesafe :(
+      </p>
       <h3>State Count: {{ count }}</h3>
       <v-btn @click="compositonCallFunction" class="error" dark>+1 vuex</v-btn>
     </v-card>
