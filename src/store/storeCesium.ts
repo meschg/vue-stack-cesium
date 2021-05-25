@@ -11,7 +11,7 @@ class State {
 
 const actions = <ActionTree<State, any>>{
   aCsInit({ commit }) {
-    return new Promise((resolve, reject) => {
+    return new Promise<void>((resolve, reject) => {
       setTimeout(() => {
         console.log("aCsInit");
         commit("mCsInit");

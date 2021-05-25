@@ -34,6 +34,7 @@ const AppProps = Vue.extend({
   },
 });
 
+//@ts-ignore
 @Component({
   components: {},
   // Vuex's component binding helper can use here
