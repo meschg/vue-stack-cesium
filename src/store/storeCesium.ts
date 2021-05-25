@@ -1,3 +1,4 @@
+//@ts-ignore
 import { GetterTree, MutationTree, ActionTree } from "vuex";
 import Cesium from "../plugins/cesium";
 
@@ -10,6 +11,7 @@ class State {
 }
 
 const actions = <ActionTree<State, any>>{
+  //@ts-ignore
   aCsInit({ commit }) {
     return new Promise<void>((resolve, reject) => {
       setTimeout(() => {
@@ -22,7 +24,7 @@ const actions = <ActionTree<State, any>>{
 };
 
 const mutations = <MutationTree<State>>{
-  mCsInit(state) {
+  mCsInit(state: any) {
     const imageryViewModels: any = [];
     imageryViewModels.push(
       new Cesium.ProviderViewModel({
