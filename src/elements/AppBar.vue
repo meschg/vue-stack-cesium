@@ -39,7 +39,9 @@
 
       <v-btn class="mx-2" route to="/classStyle/static/props">ClassStyle</v-btn>
       <v-btn class="mx-2" @click="routerActions">Dynamic-Props</v-btn>
-      <v-btn class="mx-2" route to="/compositionAPI">Composition API</v-btn>
+      <v-btn class="mx-2" route to="/compositionAPI"
+        >Composition API {{ dep.compositionAPI }}</v-btn
+      >
 
       <v-spacer></v-spacer>
 
@@ -79,15 +81,15 @@ export default class AppBar extends AppProps {
   routerProp: string = "prop";
 
   dep = {
-    "@vue/composition-api": "1.0.0-rc.10",
+    compositionAPI: "1.0.0-rc.11",
     axios: "0.21.1",
-    cesium: "1.81.1",
+    cesium: "1.82.1",
     vue: "2.6.13",
     "vue-class-component": "7.2.6",
     "vue-property-decorator": "9.1.2",
     "vue-router": "3.5.1",
     "vue-shortkey": "3.1.7",
-    vuetify: "2.5.2",
+    vuetify: "2.5.3",
     vuex: "3.6.2",
     typescript: "4.3.2",
   };
