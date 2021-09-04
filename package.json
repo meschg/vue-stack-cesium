@@ -30,7 +30,7 @@
     "@web-types/vuetify": "^2.0.15-1",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.27.0",
-    "eslint-plugin-vue": "^7.12.1",
+    "eslint-plugin-vue": "^7.17.0",
     "sass": "^1.39.0",
     "sass-loader": "^10.2.0",
     "strip-pragma-loader": "^1.0.0",
