@@ -42,7 +42,7 @@ module.exports = {
       })
     ],
     module: {
-      unknownContextCritical: /^.\/.*$/,
+      unknownContextRegExp: /\/cesium\/cesium\/Source\/Core\/buildModuleUrl\.js/,
       unknownContextCritical: false,
       rules: [{
         // Remove pragmas within cesium as recommended - https://github.com/AnalyticalGraphicsInc/cesium-webpack-example/blob/master/webpack.release.config.js
