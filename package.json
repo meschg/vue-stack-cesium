@@ -19,6 +19,7 @@
     "vuex": "^3.6.2"
   },
   "devDependencies": {
+    "@open-wc/webpack-import-meta-loader": "^0.4.7",
     "@types/cesium": "^1.67.14",
     "@vue/cli-plugin-babel": "^4.5.13",
     "@vue/cli-plugin-eslint": "^4.5.13",

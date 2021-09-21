@@ -58,6 +58,9 @@ module.exports = {
             }
           }
         }]
+      },{
+        test: /\.js$/,
+        use: { loader: require.resolve('@open-wc/webpack-import-meta-loader') }
       }]
     }
   },
