@@ -81,7 +81,7 @@ export default class AppBar extends AppProps {
   routerProp: string = "prop";
 
   dep = {
-    compositionAPI: "1.1.5",
+    compositionAPI: "1.2.1",
     cesium: "1.85.0",
     vue: "2.6.14",
     "vue-class-component": "7.2.6",

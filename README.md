@@ -12,7 +12,7 @@ Contributions in form of best practices or corrections are welcome!
 - vuetify 2.5.x
 - vue-shortkey 3.1.x
 - vue class component 7.2.x
-- vue composition API plugin 1.0.x
+- vue composition API plugin 1.2.x
 
 ## other useful features
 
