@@ -58,10 +58,12 @@ module.exports = {
             }
           }
         }]
-      },{
+      }, {
         test: /\.js$/,
+        include: path.resolve(__dirname, 'node_modules/cesium/Source'),
         use: { loader: require.resolve('@open-wc/webpack-import-meta-loader') }
-      }]
+        }
+      ]
     }
   },
   transpileDependencies: [
