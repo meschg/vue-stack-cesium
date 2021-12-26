@@ -9,10 +9,10 @@ Contributions in form of best practices or corrections are welcome!
 - vue 2.6.x
 - vuex 3.6.x with modules
 - vue-router 3.5.x
-- vuetify 2.5.x
+- vuetify 2.6.x
 - vue-shortkey 3.1.x
 - vue class component 7.2.x
-- vue composition API plugin 1.2.x
+- vue composition API plugin 1.4.x
 
 ## other useful features
 
