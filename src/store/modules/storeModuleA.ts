@@ -1,9 +1,11 @@
 import { GetterTree, MutationTree, ActionTree } from "vuex";
-import store from "./store";
-import moduleB from "@/store/storeModuleB";
+import store from "@/store/store";
+
+// not required to import the modules access by store.state.moduleB is also possible
+import moduleB from "@/store/modules/storeModuleB";
 
 class State {
-  userId: string | null = null;
+  userIdA: string | null = null;
   valueA: string = "valueA";
   numberA: number = 10;
 }
@@ -21,8 +23,8 @@ const mutations = <MutationTree<State>>{
     console.log(
       "numberA: " +
         state.numberA +
-        "|| countRootStore: " +
-        store.state.count +
+        " || countRootStore: " +
+        store.state.storeCounter +
         " || countB: " +
         moduleB.state.countB +
         " || countB: " +

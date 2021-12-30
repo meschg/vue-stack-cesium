@@ -1,5 +1,6 @@
 <template>
   <v-container>
+    <h1>Hello, CompositionAPI example with EXTERNAL setup files</h1>
     <v-card class="ma-4 pa-4">
       <h2>File One</h2>
       <h3>{{ refValue }}</h3>
@@ -16,9 +17,14 @@
       <v-btn @click="clickIncrement">clickIncrement()</v-btn>
     </v-card>
     <v-card class="ma-4 pa-4">
-      <h2>State in File</h2>
-      <h3>State Count: {{ count }}</h3>
-      <v-btn @click="incrementVuex" color="purple" dark>+1 vuex</v-btn>
+      <h2>Store commit in file</h2>
+      <h3>State Count: {{ storeCounter }}</h3>
+      <v-btn @click="incrementVuex" color="purple">+1 vuex</v-btn>
+    </v-card>
+
+    <v-card class="ma-4 pa-4">
+      <h2>Computed in file</h2>
+      <h3>Computed-Dummy: {{ computedStuff.blubbValue }}</h3>
     </v-card>
 
     <v-card class="ma-4 pa-4">
@@ -26,30 +32,29 @@
       <p>
         This call works but shows error in VS Code that it is not typesafe :(
       </p>
-      <h3>State Count: {{ count }}</h3>
-      <v-btn @click="compositonCallFunction" class="error" dark>+1 vuex</v-btn>
+      <h3>State Count: {{ storeCounter }}</h3>
+      <v-btn @click="compositonCallFunction" color="purple">+1 vuex</v-btn>
     </v-card>
   </v-container>
 </template>
 
 <script lang="ts">
-import { ref, reactive, computed, toRefs } from "@vue/composition-api";
+import { defineComponent } from "vue";
+import { mapState, mapActions, mapMutations, mapGetters } from "vuex";
+
 import fileCompositionOne from "@/composables/HelloComposableOne";
 import fileCompositionTwo from "@/composables/HelloComposableTwo";
 import fileCompositionVuex from "@/composables/HelloComposableVuex";
-import { mapState, mapMutations } from "vuex";
 
-import Vue from "vue";
-
-export default Vue.extend({
-  name: "HelloVue",
+export default defineComponent({
+  name: "HelloCompositionAPIExternal",
   props: {
     msg: String,
   },
   setup() {
     const { recObj, incrementComp, refValue } = fileCompositionOne();
     const { secondRObj, clickIncrement } = fileCompositionTwo();
-    const { vuexRObj, incrementVuex } = fileCompositionVuex();
+    const { vuexRObj, incrementVuex, computedStuff } = fileCompositionVuex();
     return {
       recObj,
       incrementComp,
@@ -58,14 +63,16 @@ export default Vue.extend({
       clickIncrement,
       vuexRObj,
       incrementVuex,
+      computedStuff,
     };
   },
-  computed: mapState(["count"]),
+  data: () => ({}),
+  watch: {},
+  computed: mapState(["storeCounter"]),
   methods: {
-    ...mapMutations(["increment"]),
+    ...mapMutations(["incrementStore"]),
     compositonCallFunction() {
-      //@ts-ignore
-      this.incrementVuex(); // <- Working but not typesave :/
+      this.incrementVuex();
     },
   },
 });

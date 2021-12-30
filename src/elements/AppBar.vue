@@ -1,53 +1,49 @@
 <template>
   <div>
-    <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="../assets/logo.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="data:image/png;base64,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"
-          transition="scale-transition"
-          width="200"
-        />
-      </div>
-
-      <v-btn class="mx-2" route to="/">Vue {{ dep.vue }}</v-btn>
-      <v-btn class="mx-2" route to="/vuetify">Vuetify {{ dep.vuetify }}</v-btn>
-      <v-btn class="mx-2" route to="/typescript"
-        >Typescript {{ dep.typescript }}</v-btn
+    <v-app-bar app color="primary">
+      <v-btn class="mx-2" route to="/">
+        <v-img class="mr-2" src="../../public/logo-vue.png" width="30" />
+        Vue {{ dep.vue }}</v-btn
       >
-      <v-btn class="mx-2" route to="/cesium">Cesium {{ dep.cesium }}</v-btn>
+      <v-btn class="mx-2" route to="/compositionAPI">
+        <v-img class="mr-2" src="../../public/logo-vue.png" width="30" />
+        Vue 3 Composition API</v-btn
+      >
 
-      <v-btn class="mx-2" route to="/classStyle/static/props">ClassStyle</v-btn>
-      <v-btn class="mx-2" @click="routerActions">Dynamic-Props</v-btn>
-      <v-btn class="mx-2" route to="/compositionAPI"
-        >Composition API {{ dep.compositionAPI }}</v-btn
+      <v-btn class="mx-2" @click="routerActions">
+        <v-img class="mr-2" src="../../public/logo-vue.png" width="30" />Router
+        Dynamic Props</v-btn
+      >
+
+      <v-btn class="mx-2" route to="/vuetify">
+        <v-img
+          class="mr-2"
+          src="../../public/logo-vuetify.svg"
+          width="25"
+        />Vuetify {{ dep.vuetify }}</v-btn
+      >
+      <v-btn class="mx-2" route to="/typescript">
+        <v-img
+          class="mr-2"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png"
+          width="25"
+        />
+        Typescript {{ dep.typescript }}</v-btn
+      >
+      <v-btn class="mx-2" route to="/cesium">
+        <v-img
+          class="mr-2"
+          src="data:image/png;base64,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"
+          width="27"
+        />
+        Cesium {{ dep.cesium }}</v-btn
       >
 
       <v-spacer></v-spacer>
 
       <v-btn
         href="https://github.com/meschg/vue-stack-cesium"
-        class="success"
+        class="success mr-2"
         target="_blank"
       >
         <span class="mr-2">This TEMPLATE on Github</span>
@@ -58,73 +54,38 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
-import { mapState, mapMutations } from "vuex";
+import { defineComponent } from "vue";
+import { mapState, mapActions, mapMutations, mapGetters } from "vuex";
 import router from "@/router/router";
 
-// We declare the props separately to make props types inferable.
-const AppProps = Vue.extend({
-  props: {},
-});
-
-@Component({
+export default defineComponent({
+  name: "AppBar",
   components: {},
-  // Vuex's component binding helper can use here
-  computed: mapState(["count"]),
-  methods: mapMutations(["increment"]),
-  template: '<button @click="onClick">Click!</button>',
-})
-export default class AppBar extends AppProps {
-  // inital data
-  msg: number = 123;
-  dynamicProp: string = "Dynamic";
-  routerProp: string = "prop";
-
-  dep = {
-    compositionAPI: "1.4.3",
-    cesium: "1.88.0",
-    vue: "2.6.14",
-    "vue-class-component": "7.2.6",
-    "vue-property-decorator": "9.1.2",
-    "vue-router": "3.5.3",
-    "vue-shortkey": "3.1.7",
-    vuetify: "2.6.1",
-    vuex: "3.6.2",
-    typescript: "4.5.4",
-  };
-
-  routerActions() {
-    //https://router.vuejs.org/guide/essentials/navigation.html
-    //https://router.vuejs.org/guide/essentials/passing-props.html
-    let rPar = this.msg;
-    // literal string path
-    //router.push('home')
-
-    // object
-    //router.push({ path: 'home' })
-
-    const propConst = "const456";
-    let propLet = "let123";
-    // routes do string only
-    //let compData: string = "Stringified" + this.msg
-    let compData: string = this.dynamicProp;
-
-    // named route
-    // Warning: double navigation to the same dynamic props might cause errors
-    // TODO: check if route is already active before pushing it
-    //router.push({ name: 'ClassStyleHome', params: { routerProp: '', routerProp2: "456" } })
-    //router.push({ name: 'ClassStyleHome', params: { routerProp: '123', routerProp2: propConst } })
-    //router.push({ name: 'ClassStyleHome', params: { routerProp: propLet, routerProp2: propConst } })
-    router.push({
-      name: "ClassStyleHome",
-      params: { routerProp: compData, routerProp2: propConst },
-    });
-
-    // with query, resulting in /register?plan=private
-    //router.push({ path: 'register', query: { plan: 'private' } })
-
-    //router.push("classStyle") // -> /user/123
-    console.log("Called for router" + this.msg);
-  }
-}
+  props: {
+    msg: String,
+  },
+  data: () => ({
+    dynamicProp: "router-prop-1",
+    dep: {
+      cesium: "1.88.0",
+      vue: "3.2.26",
+      "vue-router": "4.0.12",
+      vuetify: "3.0.0-alpha.12",
+      vuex: "4.0.2",
+      typescript: "4.5.4",
+    },
+  }),
+  computed: { ...mapState(["count"]) },
+  methods: {
+    routerActions: function () {
+      // routes do string only
+      let propConst = "router-prop-2";
+      router.push({
+        name: "DynamiceRouteView",
+        params: { routerProp: this.dynamicProp, routerProp2: propConst },
+      });
+    },
+    ...mapMutations(["incrementStore"]),
+  },
+});
 </script>

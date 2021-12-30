@@ -1,9 +1,7 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import VueHome from "../views/VueHome.vue";
-import ClassStyleHome from "../views/ClassStyleHome.vue";
-
-Vue.use(VueRouter);
+import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import CesiumView from "../views/CesiumView.vue";
+import DynamiceRouteView from "@/views/DynamicRouteView.vue";
+import VueView from "../views/VueView.vue";
 
 //https://router.vuejs.org/guide/essentials/passing-props.html
 const User = {
@@ -11,39 +9,24 @@ const User = {
   template: "<div>User {{ id }}</div>",
 };
 
-const routes = [
+const routes: Array<RouteRecordRaw> = [
   {
-    path: "/",
-    name: "VueHome",
-    component: VueHome,
+    path: "/cesium",
+    name: "CesiumView",
+    component: CesiumView,
   },
   {
-    path: "/typescript",
-    name: "TypescriptHome",
+    path: "/compositionAPI",
+    name: "CompositionAPIView",
     component: () =>
       import(
-        /* webpackChunkName: "TypescriptHome" */ "../views/TypescriptHome.vue"
+        /* webpackChunkName: "TypescriptView" */ "../views/CompositionAPIView.vue"
       ),
   },
   {
-    path: "/vuetify",
-    name: "VuetifyHome",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "VuetifyHome" */ "../views/VuetifyHome.vue"),
-  },
-  {
-    path: "/cesium",
-    name: "CesiumHome",
-    component: () =>
-      import(/* webpackChunkName: "CesiumHome" */ "../views/CesiumHome.vue"),
-  },
-  {
-    path: "/classStyle/:routerProp/:routerProp2",
-    name: "ClassStyleHome",
-    component: ClassStyleHome,
+    path: "/dynamiceRouteView/:routerProp/:routerProp2",
+    name: "DynamiceRouteView",
+    component: DynamiceRouteView,
     props: true,
     beforeEnter(routeTo: any, routeFrom: any, next: Function) {
       console.log("Route enter hook");
@@ -51,31 +34,42 @@ const routes = [
     },
   },
   {
-    path: "/compositionAPI",
-    name: "CompositionAPIHome",
+    path: "/typescript",
+    name: "TypescriptView",
     component: () =>
       import(
-        /* webpackChunkName: "CompositionAPIHome" */ "../views/CompositionAPIHome.vue"
+        /* webpackChunkName: "TypescriptView" */ "../views/TypescriptView.vue"
       ),
+  },
+  {
+    path: "/vuetify",
+    name: "VuetifyView",
+    component: () =>
+      import(/* webpackChunkName: "VuetifyView" */ "../views/VuetifyView.vue"),
+  },
+  {
+    path: "/",
+    name: "VueView",
+    component: VueView,
   },
 ];
 
-const router = new VueRouter({
-  mode: "history",
-  base: process.env.BASE_URL,
+const router = createRouter({
+  history: createWebHistory(),
   routes,
 });
 
 router.beforeEach((routeTo, routeFrom, next) => {
   if (routeTo.path == routeFrom.path) {
-    console.log("double navigation");
+    console.log("vue-router: navigation to the same path stopped");
     return;
   }
-  console.log(`From ${routeFrom.path} to ${routeTo.path}`);
+  console.log(`vue-router: from ${routeFrom.path} to ${routeTo.path}`);
   next();
 });
 
 router.afterEach(() => {
   //console.log("After each route triggered");
 });
+
 export default router;

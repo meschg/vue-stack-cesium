@@ -1,35 +1,61 @@
 <template>
-  <div>
-    <h1>Vue makes Cesium even more awesome!</h1>
-
-    <div id="CesiumPanelDiv">
-      <div id="cesiumContainer"></div>
-    </div>
-
-    <v-btn
-      href="https://github.com/AnalyticalGraphicsInc/cesium"
-      target="_blank"
-      class="primary ma-2"
-    >
-      <span class="ma-2">Cesium Github</span>
-      <v-icon>mdi-open-in-new</v-icon>
-    </v-btn>
-  </div>
+  <v-container>
+    <h1 class="mt-4">Hello Cesium!</h1>
+    <p>
+      <a
+        href="https://github.com/AnalyticalGraphicsInc/cesium"
+        target="_blank"
+        rel="noopener"
+        >CesiumJS on github</a
+      >
+    </p>
+    <p>
+      <a
+        href="https://github.com/nshen/vite-plugin-cesium"
+        target="_blank"
+        rel="noopener"
+        >vite-plugin-cesium on github</a
+      >
+    </p>
+    <div id="cesiumContainer"></div>
+  </v-container>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { defineComponent } from "vue";
+import { mapState, mapMutations, mapActions, mapGetters } from "vuex";
 
-export default Vue.extend({
+export default defineComponent({
   name: "HelloCesium",
+  components: {},
   props: [],
+  data: () => ({}),
+  computed: {
+    ...mapState([]),
+    ...mapGetters([]),
+  },
+  methods: {
+    ...mapActions([]),
+    ...mapMutations([]),
+  },
+  created() {},
+  mounted() {
+    this.$store.dispatch("aCsInit").then(() => {
+      console.log("HelloCesium.vue.mounted()->$store.dispatch('aCsInit')");
+      //this.$store.dispatch("loadStuffAfterAPromise");
+    });
+  },
+  unmounted() {},
+  destoryed() {},
 });
 </script>
 
-<style>
-#CesiumPanelDiv {
+<style scoped>
+#cesiumContainer {
+  width: 100%;
   height: 100%;
-  max-height: 70vh;
+  margin: 0;
+  padding: 0;
   overflow: hidden;
 }
 </style>

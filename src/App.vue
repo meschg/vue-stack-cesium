@@ -10,24 +10,57 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import AppBar from "@/elements/AppBar.vue";
+import { defineComponent } from "vue";
+import { mapState, mapActions, mapMutations, mapGetters } from "vuex";
 
-@Component({
-  components: {
-    AppBar,
+import AppBar from "@/elements/AppBar.vue";
+import router from "./router/router";
+
+export default defineComponent({
+  name: "App",
+  components: { AppBar },
+  setup() {
+    return {};
   },
-})
-export default class App extends Vue {}
+  data: () => ({}),
+  watch: {},
+  computed: {
+    ...mapState([]),
+    ...mapGetters([]),
+  },
+  methods: {
+    ...mapActions([]),
+    ...mapMutations([]),
+    functionTemplate: function () {},
+  },
+  created() {},
+  mounted() {
+    router.push("cesium");
+  },
+  unmounted() {},
+  destoryed() {},
+});
 </script>
 
 <style lang="scss">
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+nav {
+  padding: 30px;
+
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
 }
 </style>

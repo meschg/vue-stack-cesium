@@ -1,12 +1,9 @@
-import Vue from "vue";
-import Vuex from "vuex";
+import { createStore, Store } from "vuex";
 import { GetterTree, MutationTree, ActionTree } from "vuex";
 
-import moduleA from "@/store/storeModuleA";
-import moduleB from "@/store/storeModuleB";
-import cesiumStore from "@/store/storeCesium";
-
-Vue.use(Vuex);
+import moduleB from "@/store/modules/storeModuleB";
+import moduleA from "@/store/modules/storeModuleA";
+import cesiumStore from "@/store/modules/storeCesium";
 
 class State {
   // get a typesafe store.state in each module
@@ -14,8 +11,9 @@ class State {
   moduleA!: typeof moduleA.state;
   moduleB!: typeof moduleB.state;
 
+  storeCounter: number = 0;
+  storeTestVar: string = "store-test-1";
   dataSets = [];
-  count: number = 0;
 }
 
 const actions = <ActionTree<State, any>>{
@@ -48,11 +46,14 @@ const mutations = <MutationTree<State>>{
     console.log("mSetData: " + state.dataSets);
   },
 
-  increment(state) {
+  incrementStore(state) {
     console.log(
-      "count-root: " + state.count + " countB: " + moduleB.state.countB
+      "count-root-store: " +
+        state.storeCounter +
+        " moduleB-count: " +
+        moduleB.state.countB
     );
-    state.count++;
+    state.storeCounter++;
   },
 };
 
@@ -65,7 +66,7 @@ export interface RootState {
   moduleB: typeof moduleB;
 }
 
-export default new Vuex.Store({
+export default createStore<State>({
   modules: {
     // sync names in root store get a typesafe store.state for each module
     cesium: cesiumStore,
@@ -77,3 +78,15 @@ export default new Vuex.Store({
   mutations: mutations,
   getters: getters,
 });
+
+declare module "@vue/runtime-core" {
+  // declare your own store states
+  interface store {
+    state: State;
+  }
+
+  // provide typings for `this.$store`
+  interface ComponentCustomProperties {
+    $store: Store<State>;
+  }
+}

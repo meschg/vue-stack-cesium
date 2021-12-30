@@ -22,8 +22,9 @@ Contributions in form of best practices or corrections are welcome!
 
 ## Known issues
 
-- 3rd button text is not visible
+- 3rd button in AppBar does not show text
 - invalid assets urls of /assets /public when using dev or build
+- rebuild of cesium with vite-plugin-cesium in vite.config.ts not working
 - ?
 
 ## Project setup
