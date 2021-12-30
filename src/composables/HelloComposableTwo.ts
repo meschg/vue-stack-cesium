@@ -1,4 +1,4 @@
-import { ref, reactive, computed } from "@vue/composition-api";
+import { ref, reactive, computed } from "vue";
 
 export default function fileCompositionTwo() {
   const secondRObj: any = reactive({

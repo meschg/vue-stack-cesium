@@ -1,32 +1,18 @@
-import Vue from "vue";
+import { createApp } from "vue";
 import App from "./App.vue";
+import vuetify from "./plugins/vuetify";
+import { loadFonts } from "./plugins/webfontloader";
 import router from "./router/router";
 import store from "./store/store";
-import vuetify from "./plugins/vuetify";
 
-import VueCompositionAPI from "@vue/composition-api";
-Vue.use(VueCompositionAPI);
+//@ts-ignore
+import vueshortkey from "vue3-shortkey";
 
-const vueshortkey = require("vue-shortkey");
-Vue.use(vueshortkey, { prevent: ["input", "textarea"] });
+loadFonts();
 
-//import Cesium from './plugins/cesium'
-//Cesium.Ion.defaultAccessToken = 'YOUR ION TOKEN HERE OR YOU CAN NOT USE THE MAPS ANYMORE';
-
-Vue.config.productionTip = false;
-
-new Vue({
-  router,
-  store,
-  vuetify,
-  render: (h) => h(App),
-  created() {
-    this.$store.dispatch("aLoad1stDataSet").then(() => {
-      // initial action must return a promise after the data is loaded sucessfully
-      this.$store.dispatch("aLoad2ndDataSet");
-    });
-  },
-  mounted() {
-    router.push("cesium");
-  },
-}).$mount("#app");
+createApp(App)
+  .use(store)
+  .use(router)
+  .use(vuetify)
+  .use(vueshortkey, { prevent: ["input", "textarea"] })
+  .mount("#app");

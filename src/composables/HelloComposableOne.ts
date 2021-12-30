@@ -1,4 +1,4 @@
-import { ref, reactive, computed, toRefs } from "@vue/composition-api";
+import { ref, reactive, computed, toRefs } from "vue";
 
 export default function fileCompositionOne() {
   const refValue = ref(42);

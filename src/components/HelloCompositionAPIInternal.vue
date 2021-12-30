@@ -1,9 +1,10 @@
 <template>
   <v-container>
+    <h1>Hello, CompositionAPI example with INTERNAL setup files</h1>
     <v-card class="ma-4 pa-4">
       <h2>State in Components</h2>
-      <h3>State Count: {{ count }}</h3>
-      <v-btn @click="increment" color="purple" dark>+1 vuex</v-btn>
+      <h3>State Count: {{ storeCounter }}</h3>
+      <v-btn @click="incrementStore" color="purple" dark>+1 vuex</v-btn>
     </v-card>
     <v-card class="ma-4 pa-4">
       <h2>{{ refValue }}</h2>
@@ -12,7 +13,7 @@
         {{ recObj.double }} || Items: {{ recObj.itemAmount }}
       </p>
       <v-btn @click="incrementComp" class="primary ma-2"> @click() </v-btn>
-      <v-layout wrap>
+      <v-layout class="ml-4" wrap>
         <ul>
           <li v-for="(name, index) in recObj.itemList" :key="index">
             {{ name }}
@@ -24,20 +25,28 @@
 </template>
 
 <script lang="ts">
-import { ref, reactive, computed } from "@vue/composition-api";
-import { mapState, mapMutations } from "vuex";
-import Vue from "vue";
+import { defineComponent, ref, reactive, computed, toRefs } from "vue";
+import { mapState, mapActions, mapMutations, mapGetters } from "vuex";
 
-export default Vue.extend({
-  name: "HelloVue",
-  props: {
-    msg: String,
-  },
+export default defineComponent({
+  name: "HelloCompositionAPIInternal",
+  components: {},
   setup() {
     return useComposition();
   },
-  computed: mapState(["count"]),
-  methods: mapMutations(["increment"]),
+  data: () => ({}),
+  computed: {
+    ...mapState(["storeCounter"]),
+    ...mapGetters([]),
+  },
+  methods: {
+    ...mapActions([]),
+    ...mapMutations(["incrementStore"]),
+  },
+  created() {},
+  mounted() {},
+  unmounted() {},
+  destoryed() {},
 });
 
 function useComposition() {

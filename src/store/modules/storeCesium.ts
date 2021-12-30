@@ -1,8 +1,9 @@
-//@ts-ignore
+import store from "@/store/store";
 import { GetterTree, MutationTree, ActionTree } from "vuex";
-import Cesium from "../plugins/cesium";
 
-let csViewer = null;
+import * as Cesium from "cesium";
+
+var csViewer!: Cesium.Viewer;
 
 class State {
   cesiumSettings = {
@@ -15,8 +16,9 @@ const actions = <ActionTree<State, any>>{
   aCsInit({ commit }) {
     return new Promise<void>((resolve, reject) => {
       setTimeout(() => {
-        console.log("aCsInit");
+        console.log("store.aCsInit() called");
         commit("mCsInit");
+        console.log("store.aCsInit() done");
         resolve();
       }, 10);
     });
@@ -25,6 +27,7 @@ const actions = <ActionTree<State, any>>{
 
 const mutations = <MutationTree<State>>{
   mCsInit(state: any) {
+    console.log("store.mCsInit called");
     const imageryViewModels: any = [];
     imageryViewModels.push(
       new Cesium.ProviderViewModel({
@@ -34,7 +37,7 @@ const mutations = <MutationTree<State>>{
         ),
         tooltip:
           "Natural Earth II, darkened for contrast.\nhttp://www.naturalearthdata.com/",
-        creationFunction: function() {
+        creationFunction: function () {
           return new Cesium.TileMapServiceImageryProvider({
             url: Cesium.buildModuleUrl("Assets/Textures/NaturalEarthII"),
           });
@@ -49,7 +52,7 @@ const mutations = <MutationTree<State>>{
     };
     csViewer = new Cesium.Viewer("cesiumContainer", viewerData);
     csViewer.scene.debugShowFramesPerSecond = true;
-    console.log("mCsInit");
+    console.log("store.mCsInit done");
   },
 };
 
