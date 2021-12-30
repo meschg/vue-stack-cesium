@@ -44,16 +44,10 @@ vue ui
 
 ## Screenshots
 
-### Web-App 2020-10-03
+### Cesium Page with viewport using vite-plugin-cesium
 
-#### Cesium Page with Viewport
+![2021-12-30 19_40_40-vue-stack-cesium-vue-3-migration](https://user-images.githubusercontent.com/5106318/147779540-34d27a64-e63e-49dd-aeba-9310cf63c6e5.png)
 
-![view-cesium](https://user-images.githubusercontent.com/5106318/94988217-ee256600-056b-11eb-85ce-a33bb71fdd2a.jpg)
+### Project Structure 2021-12-30
 
-#### Composition API Page with multiple files as example
-
-![view-composition-API](https://user-images.githubusercontent.com/5106318/94988219-eebdfc80-056b-11eb-8e51-3268a94a4ed3.png)
-
-### Project Structure 2020-10-03
-
-![file-structure-multi-store](https://user-images.githubusercontent.com/5106318/94992463-7d417680-058a-11eb-926a-8743c6eeb4b1.png)
+![2021-12-30 19_29_35-vue-stack-cesium-vite-file-structure-VSt-Code](https://user-images.githubusercontent.com/5106318/147779538-21524e49-de22-40b3-966b-098fb56c416c.png)
