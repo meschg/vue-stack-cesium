@@ -8,17 +8,17 @@ Contributions in form of best practices or corrections are welcome!
 
 - vue 3.2.x
 - vite 2.7.x
-- vuetify 3.0.0-alpha.12
-- Typescript 4.x.y
-- cesiumJS 1.88.x
+- vuetify 3.0.0-alpha.1x
+- Typescript 4.5.x
+- cesiumJS 1.88.xs
 
 ## vue related features
 
-- vuex 4.0.x with multiple modules
+- vuex 4.0.x store with multiple files
 - vue-router 4.0.x
 - vite-plugin-cesium 1.2.x
-- vue-shortkey 4.0.0
-- vue composition API examples
+- vue-shortkey 4.0.x
+- vue composition API examples with multiple files
 
 ## Known issues
 
