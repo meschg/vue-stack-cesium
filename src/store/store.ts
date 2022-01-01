@@ -60,6 +60,7 @@ const mutations = <MutationTree<State>>{
 const getters = <GetterTree<State, any>>{};
 
 export interface RootState {
+  // not sure if this is the right thing still to do...
   state: State;
   cesium: typeof cesiumStore;
   moduleA: typeof moduleA;
