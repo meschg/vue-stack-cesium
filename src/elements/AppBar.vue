@@ -46,7 +46,7 @@
         class="success mr-2"
         target="_blank"
       >
-        <span class="mr-2">This TEMPLATE on Github</span>
+        <span class="mr-2">This code example on Github</span>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
     </v-app-bar>
@@ -67,7 +67,7 @@ export default defineComponent({
   data: () => ({
     dynamicProp: "router-prop-1",
     dep: {
-      cesium: "1.88.0",
+      cesium: "1.89.0",
       vue: "3.2.26",
       "vue-router": "4.0.12",
       vuetify: "3.0.0-alpha.12",
