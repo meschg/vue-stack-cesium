@@ -2,7 +2,7 @@
   <v-container>
     <v-card>
       <div class="hello" text-center>
-        <img alt="Vue logo" src="../../public/logo-vue.png" />
+        <img alt="Vue logo" src="/logo-vue.png" />
         <h1>{{ msg }}</h1>
         <p>
           For a guide and recipes on how to configure / customize this project,

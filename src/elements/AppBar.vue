@@ -2,25 +2,22 @@
   <div>
     <v-app-bar app color="primary">
       <v-btn class="mx-2" route to="/">
-        <v-img class="mr-2" src="../../public/logo-vue.png" width="30" />
+        <v-img class="mr-2" src="/logo-vue.png" width="30" />
         Vue {{ dep.vue }}</v-btn
       >
       <v-btn class="mx-2" route to="/compositionAPI">
-        <v-img class="mr-2" src="../../public/logo-vue.png" width="30" />
+        <v-img class="mr-2" src="/logo-vue.png" width="30" />
         Vue 3 Composition API</v-btn
       >
 
       <v-btn class="mx-2" @click="routerActions">
-        <v-img class="mr-2" src="../../public/logo-vue.png" width="30" />Router
-        Dynamic Props</v-btn
+        <v-img class="mr-2" src="/logo-vue.png" width="30" />Router Dynamic
+        Props</v-btn
       >
 
       <v-btn class="mx-2" route to="/vuetify">
-        <v-img
-          class="mr-2"
-          src="../../public/logo-vuetify.svg"
-          width="25"
-        />Vuetify {{ dep.vuetify }}</v-btn
+        <v-img class="mr-2" src="/logo-vuetify.svg" width="25" />Vuetify
+        {{ dep.vuetify }}</v-btn
       >
       <v-btn class="mx-2" route to="/typescript">
         <v-img
@@ -67,12 +64,12 @@ export default defineComponent({
   data: () => ({
     dynamicProp: "router-prop-1",
     dep: {
-      cesium: "1.89.0",
-      vue: "3.2.26",
+      cesium: "1.90.0",
+      vue: "3.2.31",
       "vue-router": "4.0.12",
       vuetify: "3.0.0-alpha.12",
       vuex: "4.0.2",
-      typescript: "4.5.4",
+      typescript: "4.5.5",
     },
   }),
   computed: { ...mapState(["count"]) },
