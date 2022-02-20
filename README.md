@@ -7,10 +7,10 @@ Contributions in form of best practices or corrections are welcome!
 ## Core features
 
 - vue 3.2.x
-- vite 2.7.x
+- vite 2.8.x
 - vuetify 3.0.0-alpha.1x
 - Typescript 4.5.x
-- cesiumJS 1.88.xs
+- cesiumJS 1.90.x
 
 ## vue related features
 
@@ -23,7 +23,7 @@ Contributions in form of best practices or corrections are welcome!
 ## Known issues
 
 - 3rd button in AppBar does not show text
-- invalid assets urls of /assets /public when using dev or build
+- invalid assets urls of /assets /public when using dev or build *Fixed?*
 - rebuild of cesium with vite-plugin-cesium in vite.config.ts not working
 - ?
 
