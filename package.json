@@ -26,8 +26,6 @@
     "@vue/cli-plugin-vuex": "^5.0.1",
     "@vue/cli-service": "^5.0.1",
     "@vuetify/vite-plugin": "^1.0.0-alpha.3",
-    "sass": "^1.49.8",
-    "sass-loader": "^12.6.0",
     "typescript": "^4.5.5",
     "vite": "^2.8.4",
     "vite-plugin-cesium": "^1.2.13",
