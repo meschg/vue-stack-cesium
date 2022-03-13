@@ -13,7 +13,7 @@ import { mapState, mapMutations, mapActions, mapGetters } from "vuex";
 // components import
 
 export default defineComponent({
-  name: "ComponentTemplate",
+  name: "TemplateComponent",
   components: {},
   props: {
     prop1: { type: String, required: true },
@@ -24,10 +24,13 @@ export default defineComponent({
   data: () => ({}),
   watch: {},
   computed: {
-    ...mapState([]),
+    ...mapState(["storeCounter", "storeTestString"]),
     ...mapGetters([]),
     getterTemplate() {
       return "";
+    },
+    getStateTemplate() {
+      this.$store.state.storeCounter;
     },
   },
   methods: {
@@ -35,6 +38,7 @@ export default defineComponent({
     ...mapMutations([]),
     functionTemplate: function () {},
   },
+
   created() {},
   mounted() {
     this.$store.dispatch("mutationTemplate");

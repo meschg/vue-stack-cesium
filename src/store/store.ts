@@ -12,7 +12,7 @@ class State {
   moduleB!: typeof moduleB.state;
 
   storeCounter: number = 0;
-  storeTestVar: string = "store-test-1";
+  storeTestString: string = "store-test-1";
   dataSets = [];
 }
 
