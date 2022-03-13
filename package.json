@@ -30,7 +30,7 @@
     "vite": "^2.8.6",
     "vite-plugin-cesium": "^1.2.13",
     "vue-cli-plugin-vuetify": "~2.4.5",
-    "vue-tsc": "^0.31.4",
+    "vue-tsc": "^0.33.0-patch.1",
     "vuetify-loader": "^2.0.0-alpha.9"
   }
 }
