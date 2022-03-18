@@ -8,7 +8,7 @@ Contributions in form of best practices or corrections are welcome!
 
 - vue 3.2.x
 - vite 2.8.x
-- vuetify 3.0.0-alpha.1x
+- vuetify 3.0.0-beta.x
 - Typescript 4.5.x
 - cesiumJS 1.91.x
 
@@ -22,10 +22,14 @@ Contributions in form of best practices or corrections are welcome!
 
 ## Known issues
 
-- 3rd button in AppBar does not show text
+- button color not create
 - invalid assets urls of /assets /public when using dev or build *Fixed?*
 - rebuild of cesium with vite-plugin-cesium in vite.config.ts not working
 - ?
+
+## upcoming changes
+
+- replace vue-shortkey with something else
 
 ## Project setup
 
