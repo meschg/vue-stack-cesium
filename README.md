@@ -22,7 +22,6 @@ Contributions in form of best practices or corrections are welcome!
 
 ## Known issues
 
-- button color not create
 - invalid assets urls of /assets /public when using dev or build *Fixed?*
 - rebuild of cesium with vite-plugin-cesium in vite.config.ts not working
 - ?

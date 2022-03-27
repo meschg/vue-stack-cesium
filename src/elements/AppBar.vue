@@ -69,7 +69,7 @@ export default defineComponent({
       "vue-router": "4.0.14",
       vuetify: "3.0.0-beta.0",
       vuex: "4.0.2",
-      typescript: "4.6.2",
+      typescript: "4.6.3",
     },
   }),
   computed: { ...mapState(["count"]) },
