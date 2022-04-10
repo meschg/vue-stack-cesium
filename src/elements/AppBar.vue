@@ -64,12 +64,15 @@ export default defineComponent({
   data: () => ({
     dynamicProp: "router-prop-1",
     dep: {
-      cesium: "1.91.0",
+      "@mdi/font": "6.6.96",
+      cesium: "1.92.0",
+      "roboto-fontface": "*",
       vue: "3.2.31",
       "vue-router": "4.0.14",
+      "vue3-shortkey": "4.0.0",
       vuetify: "3.0.0-beta.0",
       vuex: "4.0.2",
-      typescript: "4.6.3",
+      webfontloader: "1.0.0",
     },
   }),
   computed: { ...mapState(["count"]) },

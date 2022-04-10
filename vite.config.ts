@@ -14,7 +14,7 @@ export default defineConfig({
       autoImport: true,
     }),
     cesium({
-      rebuildCesium: false,
+      // rebuildCesium: false, // default value is true, I think...
     }),
   ],
   define: { "process.env": {} },
