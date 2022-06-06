@@ -8,12 +8,12 @@
   },
   "dependencies": {
     "@mdi/font": "^6.7.96",
-    "cesium": "^1.93.0",
+    "cesium": "^1.94.2",
     "roboto-fontface": "*",
-    "vue": "^3.2.36",
+    "vue": "^3.2.37",
     "vue-router": "^4.0.15",
     "vue3-shortkey": "^4.0.0",
-    "vuetify": "^3.0.0-beta.2",
+    "vuetify": "^3.0.0-beta.3",
     "vuex": "^4.0.2",
     "webfontloader": "^1.0.0"
   },
@@ -26,11 +26,11 @@
     "@vue/cli-plugin-vuex": "^5.0.4",
     "@vue/cli-service": "^5.0.4",
     "@vuetify/vite-plugin": "^1.0.0-alpha.3",
-    "typescript": "^4.7.2",
+    "typescript": "^4.7.3",
     "vite": "^2.9.9",
     "vite-plugin-cesium": "^1.2.19",
-    "vue-cli-plugin-vuetify": "^2.5.0",
-    "vue-tsc": "^0.35.0",
+    "vue-cli-plugin-vuetify": "^2.5.1",
+    "vue-tsc": "^0.36.1",
     "vuetify-loader": "^2.0.0-alpha.9"
   }
 }

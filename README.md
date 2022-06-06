@@ -10,7 +10,7 @@ Contributions in form of best practices or corrections are welcome!
 - vite 2.9.x
 - vuetify 3.0.0-beta.x
 - Typescript 4.7.x
-- cesiumJS 1.93.x
+- cesiumJS 1.94.x
 
 ## vue related features
 
