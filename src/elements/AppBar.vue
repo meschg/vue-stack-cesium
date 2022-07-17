@@ -68,7 +68,7 @@ export default defineComponent({
       cesium: "1.95.0",
       "roboto-fontface": "*",
       vue: "3.2.37",
-      "vue-router": "4.0.16",
+      "vue-router": "4.1.2",
       "vue3-shortkey": "4.0.0",
       vuetify: "3.0.0-beta.5",
       vuex: "4.0.2",

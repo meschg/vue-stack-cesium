@@ -7,7 +7,7 @@ Contributions in form of best practices or corrections are welcome!
 ## Core features
 
 - vue 3.2.x
-- vite 2.9.x
+- vite 3.0.x
 - vuetify 3.0.0-beta.x
 - Typescript 4.7.x
 - cesiumJS 1.95.x
@@ -15,7 +15,7 @@ Contributions in form of best practices or corrections are welcome!
 ## vue related features
 
 - vuex 4.0.x store with multiple files
-- vue-router 4.0.x
+- vue-router 4.1.x
 - vite-plugin-cesium 1.2.x
 - vue-shortkey 4.0.x
 - vue composition API examples with multiple files
@@ -23,8 +23,9 @@ Contributions in form of best practices or corrections are welcome!
 ## Known issues
 
 - invalid assets urls of /assets /public when using dev or build *Fixed?*
-- rebuild of cesium with vite-plugin-cesium in vite.config.ts not working
+- rebuild of cesium with vite-plugin-cesium in vite.config.ts maybe not working *Fixed?*
 - ?
+- ...
 
 ## upcoming changes
 
