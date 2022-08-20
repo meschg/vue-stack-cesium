@@ -1,7 +1,11 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
-import vuetify from "@vuetify/vite-plugin";
+
+// https://github.com/nshen/vite-plugin-cesium
 import cesium from "vite-plugin-cesium";
+
+// https://github.com/vuetifyjs/vuetify-loader/tree/next/packages/vite-plugin
+import vuetify from "vite-plugin-vuetify";
 
 import path from "path";
 

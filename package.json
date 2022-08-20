@@ -25,10 +25,10 @@
     "@vue/cli-plugin-router": "^5.0.8",
     "@vue/cli-plugin-vuex": "^5.0.8",
     "@vue/cli-service": "^5.0.8",
-    "@vuetify/vite-plugin": "^1.0.0-alpha.3",
     "typescript": "^4.7.4",
     "vite": "^3.0.9",
     "vite-plugin-cesium": "^1.2.21",
+    "vite-plugin-vuetify": "^1.0.0-alpha.14",
     "vue-cli-plugin-vuetify": "^2.5.4",
     "vue-tsc": "^0.40.1",
     "vuetify-loader": "^2.0.0-alpha.9"
