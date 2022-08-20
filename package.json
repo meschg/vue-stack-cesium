@@ -18,7 +18,6 @@
     "webfontloader": "^1.0.0"
   },
   "devDependencies": {
-    "@types/cesium": "^1.70.0",
     "@vitejs/plugin-vue": "^3.0.3",
     "@vue/cli": "^5.0.8",
     "@vue/cli-plugin-babel": "^5.0.8",
@@ -30,7 +29,6 @@
     "vite-plugin-cesium": "^1.2.21",
     "vite-plugin-vuetify": "^1.0.0-alpha.14",
     "vue-cli-plugin-vuetify": "^2.5.4",
-    "vue-tsc": "^0.40.1",
-    "vuetify-loader": "^2.0.0-alpha.9"
+    "vue-tsc": "^0.40.1"
   }
 }
