@@ -64,13 +64,13 @@ export default defineComponent({
   data: () => ({
     dynamicProp: "router-prop-1",
     dep: {
-      "@mdi/font": "6.7.96",
-      cesium: "1.95.0",
+      "@mdi/font": "7.0.96",
+      cesium: "1.96.0",
       "roboto-fontface": "*",
       vue: "3.2.37",
-      "vue-router": "4.1.2",
+      "vue-router": "4.1.3",
       "vue3-shortkey": "4.0.0",
-      vuetify: "3.0.0-beta.5",
+      vuetify: "3.0.0-beta.8",
       vuex: "4.0.2",
       webfontloader: "1.0.0",
       typescript: "4.7.4",
