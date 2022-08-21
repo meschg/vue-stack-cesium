@@ -17,6 +17,7 @@ Contributions in form of best practices or corrections are welcome!
 - vuex 4.0.x store with multiple files
 - vue-router 4.1.x
 - vite-plugin-cesium 1.2.x
+- vite-plugin-vuetify 1.0.0-alpha.xx
 - vue-shortkey 4.0.0 [to be removed]
 - vue composition API examples with multiple files
 
