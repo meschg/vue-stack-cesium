@@ -7,10 +7,10 @@ Contributions in form of best practices or corrections are welcome!
 ## Core features
 
 - vue 3.2.x
-- vite 3.0.x
+- vite 3.1.x
 - vuetify 3.0.0-beta.x
-- Typescript 4.7.x
-- cesiumJS 1.96.x
+- Typescript 4.8.x
+- cesiumJS 1.97.x
 
 ## vue related features
 
