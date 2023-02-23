@@ -7,17 +7,17 @@ Contributions in form of best practices or corrections are welcome!
 ## Core features
 
 - vue 3.2.x
-- vite 3.1.x
-- vuetify 3.0.0-beta.x
-- Typescript 4.8.x
-- cesiumJS 1.97.x
+- vite 3.2.x
+- vuetify 3.1.x
+- Typescript 4.9.x
+- cesiumJS 1.102.x
 
 ## vue related features
 
-- vuex 4.0.x store with multiple files
+- vuex 4.1.x store with multiple files
 - vue-router 4.1.x
 - vite-plugin-cesium 1.2.x
-- vite-plugin-vuetify 1.0.0-alpha.xx
+- vite-plugin-vuetify 1.0.x
 - vue-shortkey 4.0.0 [to be removed]
 - vue composition API examples with multiple files
 
@@ -30,6 +30,7 @@ Contributions in form of best practices or corrections are welcome!
 
 ## upcoming changes
 
+- update to vite 4.x.y
 - replace vue-shortkey with something else
 
 ## Project setup
@@ -39,7 +40,7 @@ Contributions in form of best practices or corrections are welcome!
 ```bash
 git clone/unzip
 npm install
-npm install -g vite vitejs
+npm install --location:global vite
 vite dev
 ```
 
@@ -48,7 +49,7 @@ vite dev
 ```bash
 git clone/unzip
 npm install
-npm install -g @vue/cli
+npm install --location:global @vue/cli vite
 vue ui
 ```
 
