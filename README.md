@@ -7,7 +7,7 @@ Contributions in form of best practices or corrections are welcome!
 ## Core features
 
 - vue 3.2.x
-- vite 3.2.x
+- vite 4.1.x
 - vuetify 3.1.x
 - Typescript 4.9.x
 - cesiumJS 1.102.x
@@ -30,7 +30,6 @@ Contributions in form of best practices or corrections are welcome!
 
 ## upcoming changes
 
-- update to vite 4.x.y
 - replace vue-shortkey with something else
 
 ## Project setup

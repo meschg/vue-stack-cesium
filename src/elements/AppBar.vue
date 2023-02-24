@@ -73,6 +73,7 @@ export default defineComponent({
       vuex: "4.1.0",
       webfontloader: "1.0.0",
       typescript: "4.9.5",
+      vite: "^4.1.4",
     },
   }),
   computed: { ...mapState(["count"]) },
