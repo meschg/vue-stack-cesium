@@ -7,29 +7,29 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@mdi/font": "^7.2.96",
-    "cesium": "^1.105.0",
+    "@mdi/font": "^7.4.47",
+    "cesium": "^1.122.0",
     "roboto-fontface": "*",
-    "vue": "^3.2.47",
-    "vue-router": "^4.1.6",
+    "vue": "^3.5.10",
+    "vue-router": "^4.4.5",
     "vue3-shortkey": "^4.0.0",
-    "vuetify": "^3.2.2",
+    "vuetify": "^3.7.2",
     "vuex": "^4.1.0",
-    "webfontloader": "^1.0.0"
+    "webfontloader": "^1.6.28"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^4.2.1",
+    "@vitejs/plugin-vue": "^5.1.4",
     "@vue/cli": "^5.0.8",
     "@vue/cli-plugin-babel": "^5.0.8",
     "@vue/cli-plugin-router": "^5.0.8",
     "@vue/cli-plugin-vuex": "^5.0.8",
     "@vue/cli-service": "^5.0.8",
-    "sass": "^1.62.1",
-    "typescript": "^5.0.4",
-    "vite": "^4.3.9",
-    "vite-plugin-cesium": "^1.2.22",
-    "vite-plugin-vuetify": "^1.0.2",
+    "sass": "^1.79.4",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.8",
+    "vite-plugin-cesium": "^1.2.23",
+    "vite-plugin-vuetify": "^2.0.4",
     "vue-cli-plugin-vuetify": "^2.5.8",
-    "vue-tsc": "^1.6.4"
+    "vue-tsc": "^2.1.6"
   }
 }
