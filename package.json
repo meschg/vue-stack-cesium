@@ -8,28 +8,28 @@
   },
   "dependencies": {
     "@mdi/font": "^7.4.47",
-    "cesium": "^1.122.0",
+    "cesium": "^1.123.0",
     "roboto-fontface": "*",
-    "vue": "^3.5.10",
+    "vue": "^3.5.12",
     "vue-router": "^4.4.5",
     "vue3-shortkey": "^4.0.0",
-    "vuetify": "^3.7.2",
+    "vuetify": "^3.7.3",
     "vuex": "^4.1.0",
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.1.4",
     "@vue/cli": "^5.0.8",
-    "@vue/cli-plugin-babel": "^3.12.1",
+    "@vue/cli-plugin-babel": "^5.0.8",
     "@vue/cli-plugin-router": "^5.0.8",
     "@vue/cli-plugin-vuex": "^5.0.8",
     "@vue/cli-service": "^5.0.8",
-    "sass": "^1.79.4",
-    "typescript": "^5.6.2",
-    "vite": "^5.4.8",
+    "sass": "^1.80.6",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.10",
     "vite-plugin-cesium": "^1.2.23",
     "vite-plugin-vuetify": "^2.0.4",
     "vue-cli-plugin-vuetify": "^2.5.8",
-    "vue-tsc": "^2.1.6"
+    "vue-tsc": "^2.1.10"
   }
 }
