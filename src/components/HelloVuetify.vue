@@ -134,7 +134,6 @@ export default defineComponent({
   data: () => ({
     displayText: "InitialText",
     buttonCounter: 0,
-    hasTriggeredSpaceShortkey: false,
     stopSpaceListener: null as null | (() => void),
     dataBinds: {
       textField: "textfield init-value",
@@ -194,7 +193,7 @@ export default defineComponent({
       console.debug(event);
     },
     handleSpaceShortkey: function (event: KeyboardEvent) {
-      if (this.hasTriggeredSpaceShortkey || event.repeat) return;
+      if (event.repeat) return;
 
       const target = event.target as HTMLElement | null;
       const tagName = target?.tagName?.toLowerCase();
@@ -204,9 +203,10 @@ export default defineComponent({
       if (event.key !== " " && event.code !== "Space") return;
 
       event.preventDefault();
-      this.hasTriggeredSpaceShortkey = true;
       console.log("Button shortkey function called");
       console.debug(event);
+      this.stopSpaceListener?.();
+      this.stopSpaceListener = null;
 
       const button = this.$refs.shortkeyButton as
         | { $el?: HTMLElement }
@@ -214,16 +214,12 @@ export default defineComponent({
         | undefined;
       if (button && "$el" in button && button.$el) {
         button.$el.click();
-        this.displayText = "Button triggerd by shortkey";
-        return;
-      }
-      if (button instanceof HTMLElement) {
+      } else if (button instanceof HTMLElement) {
         button.click();
-        this.displayText = "Button triggerd by shortkey";
-        return;
+      } else {
+        this.buttonClickFunction(new MouseEvent("click"));
       }
-      this.buttonClickFunction(event);
-      this.displayText = "Button triggerd by shortkey";
+      this.displayText = "Button triggered by shortkey";
     },
     greetFunction: function () {
       alert("The number is: " + this.buttonCounter);
@@ -237,6 +233,5 @@ export default defineComponent({
   beforeUnmount() {
     this.stopSpaceListener?.();
   },
-  destoryed() {},
 });
 </script>
