@@ -18,7 +18,7 @@ Contributions in form of best practices or corrections are welcome!
 - vue-router 4.4.x
 - vite-plugin-cesium 1.2.x
 - vite-plugin-vuetify 2.0.x
-- vue-shortkey 4.0.0 [to be removed]
+- @vueuse/core
 - vue composition API examples with multiple files
 
 ## Known issues
@@ -27,10 +27,6 @@ Contributions in form of best practices or corrections are welcome!
 - Rebuild of cesium with vite-plugin-cesium in vite.config.ts maybe not working *Fixed?*
 - ?
 - ...
-
-## upcoming changes
-
-- Replace vue-shortkey with something else
 
 ## Project setup
 
