@@ -69,7 +69,6 @@ export default defineComponent({
       "roboto-fontface": "*",
       vue: "3.5.12",
       "vue-router": "4.4.5",
-      "vue3-shortkey": "4.0.0",
       vuetify: "3.7.3",
       vuex: "4.1.0",
       webfontloader: "1.6.28",

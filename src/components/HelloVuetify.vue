@@ -73,22 +73,21 @@
       <v-row>
         <v-col cols="4" class="pa-4">
           <v-btn
+            ref="shortkeyButton"
             class="my-1"
             block
             @click="buttonClickFunction"
-            @shortkey="buttonShortkeyFunction"
-            v-shortkey.once="['space']"
           >
             <v-icon>mdi-email</v-icon> Icon-Button with shortkey (Space)
           </v-btn>
           Implemented with
           <a
-            href="https://github.com/rodrigopv/vue3-shortkey"
+            href="https://vueuse.org/core/useeventlistener/"
             target="_blank"
             rel="noopener"
-            >vue3-shortkey on github</a
+            >VueUse useEventListener</a
           >
-          <p>Shortkey currently does not trigger button effect yet :(</p>
+          <p>Shortkey triggers the same button click effect once</p>
         </v-col>
 
         <v-col cols="4">
@@ -127,6 +126,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { useEventListener } from "@vueuse/core";
 import { mapState, mapMutations, mapActions, mapGetters } from "vuex";
 
 export default defineComponent({
@@ -134,6 +134,7 @@ export default defineComponent({
   data: () => ({
     displayText: "InitialText",
     buttonCounter: 0,
+    stopSpaceListener: null as null | (() => void),
     dataBinds: {
       textField: "textfield init-value",
     },
@@ -191,11 +192,34 @@ export default defineComponent({
       console.log("Button click function called");
       console.debug(event);
     },
-    buttonShortkeyFunction: function (event: any) {
-      this.displayText = "Button triggerd by shortkey";
-      this.buttonCounter++;
+    handleSpaceShortkey: function (event: KeyboardEvent) {
+      if (event.repeat) return;
+
+      const target = event.target as HTMLElement | null;
+      const tagName = target?.tagName?.toLowerCase();
+      if (tagName === "input" || tagName === "textarea" || target?.isContentEditable)
+        return;
+
+      if (event.key !== " " && event.code !== "Space") return;
+
+      event.preventDefault();
       console.log("Button shortkey function called");
       console.debug(event);
+      this.stopSpaceListener?.();
+      this.stopSpaceListener = null;
+
+      const button = this.$refs.shortkeyButton as
+        | { $el?: HTMLElement }
+        | HTMLElement
+        | undefined;
+      if (button && "$el" in button && button.$el) {
+        button.$el.click();
+      } else if (button instanceof HTMLElement) {
+        button.click();
+      } else {
+        this.buttonClickFunction(new MouseEvent("click"));
+      }
+      this.displayText = "Button triggered by shortkey";
     },
     greetFunction: function () {
       alert("The number is: " + this.buttonCounter);
@@ -203,7 +227,11 @@ export default defineComponent({
     },
   },
   created() {},
-  mounted() {},
-  destoryed() {},
+  mounted() {
+    this.stopSpaceListener = useEventListener(window, "keydown", this.handleSpaceShortkey);
+  },
+  beforeUnmount() {
+    this.stopSpaceListener?.();
+  },
 });
 </script>
