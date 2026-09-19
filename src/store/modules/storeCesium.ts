@@ -38,9 +38,9 @@ const mutations = <MutationTree<State>>{
         tooltip:
           "Natural Earth II, darkened for contrast.\nhttp://www.naturalearthdata.com/",
         creationFunction: function () {
-          return new Cesium.TileMapServiceImageryProvider({
-            url: Cesium.buildModuleUrl("Assets/Textures/NaturalEarthII"),
-          });
+          return Cesium.TileMapServiceImageryProvider.fromUrl(
+            Cesium.buildModuleUrl("Assets/Textures/NaturalEarthII")
+          );
         },
       })
     );

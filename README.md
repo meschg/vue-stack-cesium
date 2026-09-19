@@ -6,18 +6,18 @@ Contributions in form of best practices or corrections are welcome!
 
 ## Core features
 
-- vue 3.5.x
-- vite 5.4.x
-- vuetify 3.7.x
-- Typescript 5.6.x
-- cesiumJS 1.122.x
+- vue 3.5.43
+- vite 8.3.0
+- vuetify 4.2.1
+- Typescript 5.9.3
+- cesiumJS 1.145.0
 
 ## vue related features
 
-- vuex 4.1.x store with multiple files
-- vue-router 4.4.x
-- vite-plugin-cesium 1.2.x
-- vite-plugin-vuetify 2.0.x
+- vuex 4.1.0 store with multiple files
+- vue-router 5.3.1
+- vite-plugin-cesium 1.2.23
+- vite-plugin-vuetify 2.1.3
 - @vueuse/core
 - vue composition API examples with multiple files
 
@@ -35,7 +35,6 @@ Contributions in form of best practices or corrections are welcome!
 ```bash
 git clone/unzip
 npm install
-npm install --location:global vite
 npm run dev
 ```
 
