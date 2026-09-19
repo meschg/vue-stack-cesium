@@ -147,7 +147,7 @@ export default defineComponent({
       this.localCounter += 1;
     },
     functionTemplate: function () {
-      this.localTestVar = this.$store.state.storeTestVar;
+      this.localTestVar = this.$store.state.storeTestString;
     },
   },
   created() {},

@@ -91,7 +91,7 @@
         </v-col>
 
         <v-col cols="4">
-          <v-alert dense outlined prominent text type="success">
+          <v-alert density="compact" prominent variant="outlined" type="success">
             {{ displayText }} Count: {{ buttonCounter }}
           </v-alert>
         </v-col>
