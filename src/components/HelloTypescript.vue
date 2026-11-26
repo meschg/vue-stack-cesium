@@ -8,12 +8,9 @@
       >
     </p>
     <p>
-      @vue/cli-plugin-typescript
-      <a
-        href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-typescript"
-        target="_blank"
-        rel="noopener"
-        >on github</a
+      Vite TypeScript support
+      <a href="https://vite.dev/guide/features.html#typescript" target="_blank" rel="noopener"
+        >documentation</a
       >
     </p>
     <v-card class="pa-2 ma-2">
