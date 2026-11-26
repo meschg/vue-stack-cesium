@@ -4,26 +4,27 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
     "@mdi/font": "^7.4.47",
-    "@vueuse/core": "^14.4.0",
-    "cesium": "^1.145.0",
+    "@vueuse/core": "^15.1.0",
+    "cesium": "^1.147.0",
     "roboto-fontface": "*",
-    "vue": "^3.5.43",
-    "vue-router": "^5.3.1",
-    "vuetify": "^4.2.1",
+    "vue": "^3.5.46",
+    "vue-router": "^5.5.3",
+    "vuetify": "^4.3.5",
     "vuex": "^4.1.0",
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^6.0.9",
-    "sass": "^1.80.6",
+    "@vitejs/plugin-vue": "^6.0.11",
+    "sass": "^1.108.2",
     "typescript": "^5.9.3",
-    "vite": "^8.3.4",
+    "vite": "^8.4.0",
     "vite-plugin-cesium": "^1.2.23",
     "vite-plugin-vuetify": "^2.1.3",
-    "vue-tsc": "^3.3.11"
+    "vue-tsc": "^3.3.14"
   }
 }

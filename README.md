@@ -6,16 +6,16 @@ Contributions in form of best practices or corrections are welcome!
 
 ## Core features
 
-- vue 3.5.43
-- vite 8.3.0
-- vuetify 4.2.1
+- vue 3.5.46
+- vite 8.4.0
+- vuetify 4.3.5
 - Typescript 5.9.3
-- cesiumJS 1.145.0
+- cesiumJS 1.147.0
 
 ## vue related features
 
 - vuex 4.1.0 store with multiple files
-- vue-router 5.3.1
+- vue-router 5.5.3
 - vite-plugin-cesium 1.2.23
 - vite-plugin-vuetify 2.1.3
 - @vueuse/core
@@ -23,6 +23,7 @@ Contributions in form of best practices or corrections are welcome!
 
 ## Known issues
 
+- TypeScript 7 is deferred until vue-tsc supports its package API; TypeScript 5.9.3 is retained because TypeScript 7 does not export `./lib/tsc`, which vue-tsc requires.
 - Invalid assets urls of /assets /public when using dev or build *Fixed?*
 - Rebuild of cesium with vite-plugin-cesium in vite.config.ts maybe not working *Fixed?*
 - ?
@@ -41,6 +42,7 @@ npm run dev
 ### To build and preview
 
 ```bash
+npm run typecheck
 npm run build
 npm run preview
 ```
